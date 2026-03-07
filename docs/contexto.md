@@ -1,8 +1,11 @@
 # Introdução
 
 O avanço das tecnologias de análise de dados e de inteligência artificial tem transformado a forma como organizações analisam informações e tomam decisões estratégicas. A Inteligência Artificial (IA) pode ser compreendida como sistemas capazes de analisar grandes volumes de dados, identificar correlações e padrões e apoiar processos de tomada de decisão em diferentes contextos organizacionais (YU et al., 2024).
+
 A adoção dessas tecnologias tem ampliado a capacidade das organizações de extrair conhecimento a partir de dados, permitindo identificar tendências, prever comportamentos e apoiar decisões em níveis estratégicos, táticos e operacionais. Nesse contexto, a inteligência artificial tem sido utilizada em diferentes áreas organizacionais, contribuindo para apoiar gestores na análise de informações complexas e na definição de estratégias baseadas em dados (YU et al., 2024).
+
 Com o aumento do volume de dados disponíveis nas organizações, especialmente em setores intensivos em informação, como o setor financeiro, a aplicação de técnicas de ciência de dados e aprendizado de máquina tornou-se uma ferramenta relevante para compreender padrões de comportamento de clientes e apoiar processos decisórios.
+
 Diante desse cenário, este projeto propõe investigar como técnicas de aprendizado de máquina podem ser utilizadas para identificar padrões em dados de clientes de cartão de crédito, contribuindo para a segmentação de perfis de usuários e para a compreensão do comportamento de consumo no setor financeiro.
 
 ## Problema
@@ -57,7 +60,42 @@ Entre os principais grupos que podem se beneficiar da investigação estão:
 
 ## Estado da arte
 
-Nesta seção, descreva abordagens da literatura que tratam problemas semelhantes ao seu. Seu objetivo é documentar métodos, dados, métricas e resultados.
+A literatura recente tem investigado como a Inteligência Artificial vem sendo utilizada para apoiar processos de tomada de decisão nas organizações, especialmente em áreas como operações, marketing, finanças e gestão estratégica. Diversos estudos analisam aplicações de IA em contextos organizacionais, avaliando os tipos de problemas abordados, os dados utilizados, os algoritmos empregados e os resultados obtidos.
+
+Nesta seção, são apresentados estudos relevantes que investigam o uso de Inteligência Artificial em processos decisórios organizacionais, destacando seus métodos, métricas e principais resultados.
+
+## Estudo 1 – Yu et al. (2024)
+## Problema e contexto
+O estudo investiga como a Inteligência Artificial está sendo utilizada no processo de tomada de decisão dentro das organizações. O objetivo principal foi mapear aplicações de IA em diferentes áreas funcionais das empresas, identificando em quais contextos a IA atua como sistema de suporte à decisão ou como tomadora automática de decisões. A pesquisa analisa a adoção da IA em processos organizacionais, considerando diferentes níveis de decisão: estratégico, tático e operacional.
+
+## Dados utilizados (Dataset)
+O estudo utilizou dados secundários provenientes de diversas fontes públicas, incluindo relatórios de empresas, publicações especializadas e estudos de caso sobre aplicações de Inteligência Artificial. Ao todo, foram analisados 128 casos de uso de IA em organizações, coletados a partir de buscas em fontes online e literatura especializada. Esses casos foram classificados segundo área funcional da empresa, setor econômico, nível de decisão e papel da IA no processo decisório. 
+
+## Abordagem e algoritmos
+A pesquisa adotou uma abordagem qualitativa e exploratória, utilizando um método de classificação baseado em teorias de tomada de decisão organizacional. Os casos de uso foram categorizados segundo quatro dimensões principais:
+* Área funcional da organização
+* Área de decisão específica
+* Nível de decisão (estratégico, tático ou operacional)
+* Papel da IA (tomadora de decisão ou suporte à decisão)
+
+Esse processo permitiu construir um mapa decisório das aplicações de IA nas organizações, possibilitando identificar padrões de adoção da tecnologia em diferentes setores e níveis decisórios.
+
+## Métricas de avaliação
+A análise foi realizada por meio de classificação e comparação dos casos de uso segundo diferentes dimensões organizacionais. As métricas utilizadas envolveram principalmente análises de frequência e distribuição das aplicações de IA por:
+* setor econômico
+* área funcional
+* tipo de decisão (automatizada ou assistida)
+* nível de decisão organizacional
+
+Essa abordagem permitiu identificar padrões de adoção e concentração de aplicações de IA em determinadas áreas das organizações.
+
+## Resultados e conclusões
+Os resultados indicaram que a maior parte das aplicações de Inteligência Artificial ocorre nas áreas de Operações e Marketing, especialmente no nível operacional das organizações. Aproximadamente 67% dos casos analisados estavam relacionados à área de operações, evidenciando forte utilização da IA para otimização de processos produtivos e operacionais. 
+Além disso, o estudo identificou dois padrões principais de utilização da IA:
+* Decision Support Systems (DSS): sistemas que auxiliam humanos na tomada de decisão.
+* Decision Makers (DM): sistemas que tomam decisões automaticamente sem intervenção humana.
+
+Os autores concluem que a IA tem ampliado principalmente a eficiência de decisões operacionais, criando novas possibilidades de automação e apoio à gestão organizacional. Contudo, destacam que a pesquisa possui limitações relacionadas ao tamanho da amostra e à natureza exploratória do estudo, sugerindo a ampliação futura do mapeamento de aplicações de IA.
 
 ### O que levantar (mínimo 5 trabalhos)
 Para **cada estudo encontrado** aderente à temática do grupo, registre de forma objetiva:
