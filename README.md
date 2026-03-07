@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# Análise de Perfis de Clientes de Cartão de Crédito utilizando Técnicas de Inteligência Artificial
 
 `CURSO: Sistemas de Informação`
 
@@ -6,7 +6,9 @@
 
 `SEMESTRE: 7º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Este projeto tem como objetivo aplicar técnicas de análise de dados e Inteligência Artificial para identificar padrões de comportamento entre clientes de cartão de crédito. A partir da análise de variáveis relacionadas ao uso do cartão, perfil financeiro e histórico de relacionamento com a instituição, busca-se compreender como diferentes grupos de clientes se comportam e quais características podem indicar mudanças no nível de engajamento com o serviço.
+
+Por meio da utilização de métodos de ciência de dados e algoritmos de aprendizado de máquina, o projeto pretende agrupar clientes com comportamentos semelhantes e identificar possíveis perfis existentes na base de dados. Os resultados obtidos podem contribuir para que instituições financeiras compreendam melhor seus usuários, apoiando estratégias de retenção de clientes, tomada de decisão e desenvolvimento de serviços mais adequados às necessidades do público.
 
 ## Integrantes
 
