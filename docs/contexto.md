@@ -58,20 +58,22 @@ Entre os principais grupos que podem se beneficiar da investigação estão:
 * Gestores e tomadores de decisão, que podem utilizar insights derivados da análise de dados para apoiar estratégias de retenção e segmentação de clientes.
 * Pesquisadores e estudantes da área de Sistemas de Informação e Ciência de Dados, que buscam compreender aplicações práticas de aprendizado de máquina em problemas reais de negócio.
 
-## Estado da arte
+# Estado da Arte
 
-A literatura recente tem investigado como a Inteligência Artificial vem sendo utilizada para apoiar processos de tomada de decisão nas organizações, especialmente em áreas como operações, marketing, finanças e gestão estratégica. Diversos estudos analisam aplicações de IA em contextos organizacionais, avaliando os tipos de problemas abordados, os dados utilizados, os algoritmos empregados e os resultados obtidos.
+A literatura recente tem investigado como a **Inteligência Artificial (IA)** vem sendo utilizada para apoiar processos de **tomada de decisão nas organizações**, especialmente em áreas como operações, marketing, finanças e gestão estratégica. Diversos estudos analisam aplicações de IA em contextos organizacionais, avaliando os **tipos de problemas abordados, os dados utilizados, os algoritmos empregados e os resultados obtidos**.
 
-Nesta seção, são apresentados estudos relevantes que investigam o uso de Inteligência Artificial em processos decisórios organizacionais, destacando seus métodos, métricas e principais resultados.
+Nesta seção, são apresentados estudos relevantes que investigam o uso de **Inteligência Artificial em processos decisórios organizacionais**, destacando seus **métodos, métricas e principais resultados**.
+
+---
 
 ## Estudo 1 – Yu et al. (2024)
-## Problema e contexto
+### Problema e contexto
 O estudo investiga como a Inteligência Artificial está sendo utilizada no processo de tomada de decisão dentro das organizações. O objetivo principal foi mapear aplicações de IA em diferentes áreas funcionais das empresas, identificando em quais contextos a IA atua como sistema de suporte à decisão ou como tomadora automática de decisões. A pesquisa analisa a adoção da IA em processos organizacionais, considerando diferentes níveis de decisão: estratégico, tático e operacional.
 
-## Dados utilizados (Dataset)
+### Dados utilizados (Dataset)
 O estudo utilizou dados secundários provenientes de diversas fontes públicas, incluindo relatórios de empresas, publicações especializadas e estudos de caso sobre aplicações de Inteligência Artificial. Ao todo, foram analisados 128 casos de uso de IA em organizações, coletados a partir de buscas em fontes online e literatura especializada. Esses casos foram classificados segundo área funcional da empresa, setor econômico, nível de decisão e papel da IA no processo decisório. 
 
-## Abordagem e algoritmos
+### Abordagem e algoritmos
 A pesquisa adotou uma abordagem qualitativa e exploratória, utilizando um método de classificação baseado em teorias de tomada de decisão organizacional. Os casos de uso foram categorizados segundo quatro dimensões principais:
 * Área funcional da organização
 * Área de decisão específica
@@ -80,7 +82,7 @@ A pesquisa adotou uma abordagem qualitativa e exploratória, utilizando um méto
 
 Esse processo permitiu construir um mapa decisório das aplicações de IA nas organizações, possibilitando identificar padrões de adoção da tecnologia em diferentes setores e níveis decisórios.
 
-## Métricas de avaliação
+### Métricas de avaliação
 A análise foi realizada por meio de classificação e comparação dos casos de uso segundo diferentes dimensões organizacionais. As métricas utilizadas envolveram principalmente análises de frequência e distribuição das aplicações de IA por:
 * setor econômico
 * área funcional
@@ -89,7 +91,7 @@ A análise foi realizada por meio de classificação e comparação dos casos de
 
 Essa abordagem permitiu identificar padrões de adoção e concentração de aplicações de IA em determinadas áreas das organizações.
 
-## Resultados e conclusões
+### Resultados e conclusões
 Os resultados indicaram que a maior parte das aplicações de Inteligência Artificial ocorre nas áreas de Operações e Marketing, especialmente no nível operacional das organizações. Aproximadamente 67% dos casos analisados estavam relacionados à área de operações, evidenciando forte utilização da IA para otimização de processos produtivos e operacionais. 
 Além disso, o estudo identificou dois padrões principais de utilização da IA:
 * Decision Support Systems (DSS): sistemas que auxiliam humanos na tomada de decisão.
