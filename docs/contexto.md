@@ -36,98 +36,122 @@ Explorar e aplicar modelos de aprendizado de máquina para identificar padrões 
 
 ## Justificativa
 
-A análise do comportamento de clientes no setor financeiro é um tema amplamente estudado devido ao impacto direto que a retenção e o engajamento de clientes têm sobre a sustentabilidade das instituições financeiras. Estratégias de segmentação e análise de comportamento tornam-se fundamentais para compreender perfis de clientes e apoiar decisões relacionadas a marketing, relacionamento e desenvolvimento de produtos financeiros.
+A análise do comportamento de clientes no setor financeiro é um tema de elevada relevância, uma vez que a retenção, o engajamento e o relacionamento com o cliente exercem impacto direto sobre a sustentabilidade e a competitividade das instituições financeiras. Estratégias de segmentação e análise comportamental tornam-se, nesse contexto, fundamentais para compreender perfis de usuários, apoiar decisões de marketing, orientar ações de relacionamento e subsidiar o desenvolvimento de produtos e serviços.
 
-Com o crescimento do volume de dados disponíveis nas organizações, técnicas de ciência de dados e aprendizado de máquina passaram a ser amplamente utilizadas para extrair conhecimento desses dados e apoiar processos de tomada de decisão. A inteligência artificial tem sido empregada em diversas áreas organizacionais para apoiar gestores na análise de dados e na identificação de padrões relevantes para decisões estratégicas, táticas e operacionais (YU et al., 2024).
+Com o crescimento do volume de dados disponíveis nas organizações, técnicas de ciência de dados e aprendizado de máquina passaram a ocupar papel central na transformação desses dados em conhecimento útil para a tomada de decisão. Yu et al. (2024) demonstram que a IA vem sendo utilizada em diferentes áreas funcionais das organizações, com destaque para operações e marketing, sobretudo como mecanismo de suporte a decisões em ambientes complexos e intensivos em dados. Esse panorama reforça a importância de estudar aplicações concretas da IA em cenários organizacionais e setoriais específicos.
 
-Nesse contexto, a análise de padrões de uso, histórico de transações e perfil dos clientes pode fornecer informações relevantes para identificar diferentes perfis de consumidores e apoiar estratégias de relacionamento. Métodos de aprendizado de máquina permitem analisar grandes conjuntos de dados e identificar relações entre variáveis que contribuem para uma compreensão mais aprofundada do comportamento dos usuários.
+No setor bancário e financeiro, esse avanço ganha ainda mais relevância diante da necessidade de processar grandes quantidades de informações em tempo real e identificar padrões que nem sempre são perceptíveis por métodos tradicionais. Tosta e Dias (2025) evidenciam que técnicas de IA, especialmente aprendizado de máquina e redes neurais, vêm sendo utilizadas para detectar padrões suspeitos e prevenir fraudes em transações bancárias. Embora o foco do referido estudo esteja na segurança financeira, sua contribuição teórica é importante para este projeto, pois demonstra como a IA pode extrair valor analítico de dados transacionais complexos. Essa mesma lógica pode ser aplicada à identificação de perfis de clientes, deslocando o foco da detecção de anomalias para a compreensão de padrões de comportamento.
 
-O conjunto de dados escolhido para este projeto contém informações relevantes sobre clientes de cartão de crédito, incluindo variáveis relacionadas ao perfil do cliente, nível de utilização do cartão, histórico de transações e relacionamento com a instituição financeira. Esses dados permitem explorar diferentes abordagens analíticas e aplicar técnicas de aprendizado de máquina para compreender melhor os padrões existentes na base de clientes.
+O conjunto de dados selecionado para este projeto reúne informações sobre clientes de cartão de crédito, incluindo variáveis demográficas, limites de crédito, histórico de transações e indicadores de relacionamento com a instituição. Tais atributos oferecem condições adequadas para explorar técnicas de análise exploratória, segmentação e modelagem, permitindo investigar como diferentes variáveis se associam e contribuem para a formação de perfis distintos de clientes.
 
-Além disso, a investigação deste problema possui relevância acadêmica e prática, pois contribui para o entendimento de como métodos de ciência de dados podem ser aplicados para apoiar análises no setor financeiro, auxiliando na identificação de perfis de clientes e na geração de insights estratégicos.
+Além disso, esta pesquisa apresenta relevância acadêmica e prática. Do ponto de vista acadêmico, contribui para o debate sobre aplicações de IA e aprendizado de máquina em problemas de negócio, especialmente no contexto de Sistemas de Informação e Ciência de Dados. Do ponto de vista prático, pode gerar insights úteis para o setor financeiro, auxiliando na compreensão do comportamento dos clientes e no desenvolvimento de estratégias orientadas por dados. Dessa forma, o estudo se justifica por articular fundamentos teóricos recentes com uma aplicação analítica concreta em um problema real e atual.
 
-## Público-Alvo
+## Público-alvo
 
 Os resultados deste estudo podem beneficiar diferentes perfis de profissionais e áreas de atuação relacionadas ao setor financeiro e à análise de dados.
 
-Entre os principais grupos que podem se beneficiar da investigação estão:
-* Analistas de dados e cientistas de dados, interessados em compreender como técnicas de aprendizado de máquina podem ser aplicadas para análise de comportamento de clientes.
-* Profissionais do setor financeiro, especialmente aqueles envolvidos em áreas de relacionamento com clientes, marketing e gestão de produtos financeiros.
-* Gestores e tomadores de decisão, que podem utilizar insights derivados da análise de dados para apoiar estratégias de retenção e segmentação de clientes.
-* Pesquisadores e estudantes da área de Sistemas de Informação e Ciência de Dados, que buscam compreender aplicações práticas de aprendizado de máquina em problemas reais de negócio.
+Entre os principais grupos beneficiados, destacam-se:
+
+- **Analistas de dados e cientistas de dados**, interessados em compreender como técnicas de aprendizado de máquina podem ser aplicadas à análise de comportamento de clientes.
+- **Profissionais do setor financeiro**, especialmente aqueles envolvidos com relacionamento com clientes, marketing, prevenção de perdas e gestão de produtos financeiros.
+- **Gestores e tomadores de decisão**, que podem utilizar os insights derivados da análise de dados para apoiar estratégias de retenção, segmentação e personalização de serviços.
+- **Pesquisadores e estudantes** das áreas de Sistemas de Informação, Ciência de Dados, Administração e Finanças, que buscam compreender aplicações práticas da IA em problemas reais de negócio.
 
 # Estado da Arte
 
-A literatura recente tem investigado como a **Inteligência Artificial (IA)** vem sendo utilizada para apoiar processos de **tomada de decisão nas organizações**, especialmente em áreas como operações, marketing, finanças e gestão estratégica. Diversos estudos analisam aplicações de IA em contextos organizacionais, avaliando os **tipos de problemas abordados, os dados utilizados, os algoritmos empregados e os resultados obtidos**.
+A literatura recente tem demonstrado que a Inteligência Artificial vem sendo incorporada de forma progressiva aos processos de decisão organizacional e às análises de dados no setor financeiro. Em linhas gerais, os estudos convergem ao indicar que a IA amplia a capacidade de tratar grandes volumes de dados, identificar padrões complexos e apoiar decisões em cenários marcados por elevada complexidade informacional. Entretanto, a forma como essas aplicações se materializam varia de acordo com o problema investigado, o tipo de dado disponível, os algoritmos utilizados e os objetivos analíticos de cada pesquisa.
 
-Nesta seção, são apresentados estudos relevantes que investigam o uso de **Inteligência Artificial em processos decisórios organizacionais**, destacando seus **métodos, métricas e principais resultados**.
+No plano organizacional mais amplo, Yu et al. (2024) investigam o uso da IA em processos decisórios nas organizações e mostram que suas aplicações se concentram principalmente nas áreas de operações e marketing, com forte presença no nível operacional. Os autores analisaram 128 casos de uso de IA em organizações, classificando-os segundo área funcional, setor econômico, nível de decisão e papel da IA no processo decisório. O estudo adota uma abordagem qualitativa e exploratória, sem foco em um algoritmo específico, e identifica dois papéis centrais da IA: como sistema de suporte à decisão e como mecanismo autônomo de decisão. Os resultados mostram que a IA tem sido utilizada prioritariamente para ampliar a eficiência operacional e automatizar processos, evidenciando seu papel como ferramenta estratégica de apoio à gestão.
 
----
+No contexto financeiro, Tosta e Dias (2025) direcionam a análise para a detecção de fraudes em transações bancárias utilizando inteligência artificial. O estudo destaca que o setor financeiro demanda métodos cada vez mais sofisticados para lidar com o crescimento das transações digitais e com a complexidade dos comportamentos suspeitos. Os autores apresentam uma discussão sobre diferentes técnicas modernas de IA aplicadas à prevenção e identificação de fraudes, com destaque para aprendizado de máquina, redes neurais, algoritmos supervisionados, análise de anomalias e processamento em tempo real. Embora o estudo tenha caráter predominantemente descritivo e bibliográfico, ele evidencia que a IA é capaz de identificar padrões complexos em grandes volumes de dados financeiros, reduzindo riscos, fortalecendo a segurança das operações e ampliando a capacidade analítica das instituições financeiras.
+
+A aproximação entre esses dois estudos sustenta teoricamente o presente projeto. De um lado, Yu et al. (2024) mostram que a IA vem sendo utilizada como instrumento de apoio à decisão em diferentes contextos organizacionais. De outro, Tosta e Dias (2025) demonstram que, no setor financeiro, técnicas de IA são eficazes para processar dados complexos e reconhecer padrões relevantes em transações bancárias. Em conjunto, esses trabalhos indicam que a aplicação de aprendizado de máquina em bases de clientes de cartão de crédito é coerente com o estado atual da literatura, especialmente quando o objetivo é transformar dados em conhecimento útil para análise, segmentação e apoio à decisão.
 
 ## Estudo 1 – Yu et al. (2024)
 ### Problema e contexto
+
 O estudo investiga como a Inteligência Artificial está sendo utilizada no processo de tomada de decisão dentro das organizações. O objetivo principal foi mapear aplicações de IA em diferentes áreas funcionais das empresas, identificando em quais contextos a IA atua como sistema de suporte à decisão ou como tomadora automática de decisões. A pesquisa analisa a adoção da IA em processos organizacionais, considerando diferentes níveis de decisão: estratégico, tático e operacional.
 
-### Dados utilizados (Dataset)
-O estudo utilizou dados secundários provenientes de diversas fontes públicas, incluindo relatórios de empresas, publicações especializadas e estudos de caso sobre aplicações de Inteligência Artificial. Ao todo, foram analisados 128 casos de uso de IA em organizações, coletados a partir de buscas em fontes online e literatura especializada. Esses casos foram classificados segundo área funcional da empresa, setor econômico, nível de decisão e papel da IA no processo decisório. 
+### Dados utilizados
+
+O estudo utilizou dados secundários provenientes de diversas fontes públicas, incluindo relatórios de empresas, publicações especializadas e estudos de caso sobre aplicações de Inteligência Artificial. Ao todo, foram analisados 128 casos de uso de IA em organizações, coletados a partir de buscas em fontes online e literatura especializada. Esses casos foram classificados segundo área funcional da empresa, setor econômico, nível de decisão e papel da IA no processo decisório.
 
 ### Abordagem e algoritmos
 A pesquisa adotou uma abordagem qualitativa e exploratória, utilizando um método de classificação baseado em teorias de tomada de decisão organizacional. Os casos de uso foram categorizados segundo quatro dimensões principais:
-* Área funcional da organização
-* Área de decisão específica
-* Nível de decisão (estratégico, tático ou operacional)
-* Papel da IA (tomadora de decisão ou suporte à decisão)
+
+- Área funcional da organização
+- Área de decisão específica
+- Nível de decisão (estratégico, tático ou operacional)
+- Papel da IA (tomadora de decisão ou suporte à decisão)
 
 Esse processo permitiu construir um mapa decisório das aplicações de IA nas organizações, possibilitando identificar padrões de adoção da tecnologia em diferentes setores e níveis decisórios.
 
 ### Métricas de avaliação
 A análise foi realizada por meio de classificação e comparação dos casos de uso segundo diferentes dimensões organizacionais. As métricas utilizadas envolveram principalmente análises de frequência e distribuição das aplicações de IA por:
-* setor econômico
-* área funcional
-* tipo de decisão (automatizada ou assistida)
-* nível de decisão organizacional
 
-Essa abordagem permitiu identificar padrões de adoção e concentração de aplicações de IA em determinadas áreas das organizações.
+- setor econômico
+- área funcional
+- tipo de decisão (automatizada ou assistida)
+- nível de decisão organizacional
 
 ### Resultados e conclusões
-Os resultados indicaram que a maior parte das aplicações de Inteligência Artificial ocorre nas áreas de Operações e Marketing, especialmente no nível operacional das organizações. Aproximadamente 67% dos casos analisados estavam relacionados à área de operações, evidenciando forte utilização da IA para otimização de processos produtivos e operacionais. 
+Os resultados indicaram que a maior parte das aplicações de Inteligência Artificial ocorre nas áreas de Operações e Marketing, especialmente no nível operacional das organizações. Aproximadamente 67% dos casos analisados estavam relacionados à área de operações, evidenciando forte utilização da IA para otimização de processos produtivos e operacionais.
+
 Além disso, o estudo identificou dois padrões principais de utilização da IA:
-* Decision Support Systems (DSS): sistemas que auxiliam humanos na tomada de decisão.
-* Decision Makers (DM): sistemas que tomam decisões automaticamente sem intervenção humana.
 
-Os autores concluem que a IA tem ampliado principalmente a eficiência de decisões operacionais, criando novas possibilidades de automação e apoio à gestão organizacional. Contudo, destacam que a pesquisa possui limitações relacionadas ao tamanho da amostra e à natureza exploratória do estudo, sugerindo a ampliação futura do mapeamento de aplicações de IA.
+- **Decision Support Systems (DSS):** sistemas que auxiliam humanos na tomada de decisão.
+- **Decision Makers (DM):** sistemas que tomam decisões automaticamente sem intervenção humana.
 
-### O que levantar (mínimo 5 trabalhos)
-Para **cada estudo encontrado** aderente à temática do grupo, registre de forma objetiva:
-* Problema e contexto: que problema o trabalho buscou resolver e em qual domínio/cenário foi aplicado.
-* Dados (dataset): origem, tamanho, período, variáveis/atributos, pré-processamentos relevantes (faltantes, balanceamento, normalização).
-* Abordagem/algoritmos: algoritmos utilizados e parâmetros principais (quando informados).
-* Métricas de avaliação: quais e por quê (ex.: Acurácia, F1, AUC, RMSE, MAE, etc.).
-* Resultados: principais números, comparações internas, limitações citadas e conclusões.
+Os autores concluem que a IA tem ampliado principalmente a eficiência de decisões operacionais, criando novas possibilidades de automação e apoio à gestão organizacional. Contudo, destacam limitações relacionadas ao tamanho da amostra e à natureza exploratória do estudo, sugerindo a ampliação futura do mapeamento de aplicações de IA.
 
-* Texto-síntese crítico (2–4 parágrafos) respondendo:
-- O que os estudos concordam? Onde divergem?
-- Quais lacunas permanecem (dados, métricas, cenários, limitações técnicas/éticas)?
-- Como seu projeto se alinha aos estudos identificados?
+## Estudo 2 – Tosta e Dias (2025)
 
-**Dica:** Prefira artigos dos últimos 5 anos ou referências clássicas indispensáveis.
+### Problema e contexto
 
-### Ferramentas inteligentes permitidas
-Você pode utilizar: Perplexity, SciSpace, Elicit, Research Rabbit, Litmaps.
-Use-as para descoberta, organização e triagem de literatura. 
+O estudo analisa o impacto da Inteligência Artificial no setor bancário e financeiro, com foco específico na detecção de fraudes em transações financeiras. O problema central está relacionado à crescente complexidade das fraudes bancárias e à necessidade de métodos mais eficazes para prevenir, identificar e reduzir prejuízos decorrentes dessas ocorrências. O trabalho discute como a IA pode atuar de forma proativa na proteção das instituições e dos clientes.
 
-**Atenção:** 
-* Sempre acesse a fonte original (PDF/artigo) antes de citar; verifique números e conclusões.
-* Registre DOI/URL oficial e dados bibliográficos completos.
-* Evite “alucinações” das ferramentas: desconfie de referências sem DOI ou que você não consiga localizar oficialmente.
-* Use as ferramentas inteligentes para mapear redes de citação (Research Rabbit), mapas de tópicos (Litmaps), filtrar por período e gerar resumos iniciais (Perplexity/SciSpace/Elicit).
-* Leia os trabalhos mais promissores e descarte estudos fora de escopo.
+### Dados utilizados
 
-> **Links Úteis**:
-> - [Google Scholar](https://scholar.google.com/)
-> - [IEEE Xplore](https://ieeexplore.ieee.org/Xplore/home.jsp)
-> - [Science Direct](https://www.sciencedirect.com/)
-> - [ACM Digital Library](https://dl.acm.org/)
+O estudo possui caráter bibliográfico e descritivo, baseando-se em revisão de literatura, dados secundários e análise de casos emblemáticos de fraudes bancárias. Também mobiliza referências sobre técnicas atuais de IA aplicadas à detecção de fraudes, discutindo exemplos de uso, tipos de dados transacionais analisados e possibilidades de integração com sistemas de monitoramento em tempo real.
+
+### Abordagem e algoritmos
+Os autores apresentam uma revisão de métodos e ferramentas de IA aplicados à prevenção e identificação de atividades fraudulentas no setor financeiro. Entre as abordagens discutidas, destacam-se:
+
+- aprendizado de máquina
+- redes neurais
+- algoritmos supervisionados
+- análise de anomalias
+- clusterização
+- árvores de decisão
+- processamento em tempo real
+- feature engineering
+
+O estudo enfatiza que essas técnicas permitem identificar padrões suspeitos em transações financeiras e ampliar a capacidade de resposta das instituições diante de comportamentos fora do padrão.
+
+### Métricas de avaliação
+
+Embora não apresente experimentação própria com base numérica comparativa, o estudo destaca como métricas relevantes para modelos de detecção de fraude:
+
+- precisão
+- recall
+- F1-score
+- redução de falsos positivos
+- capacidade de detecção de anomalias em tempo real
+
+Esses indicadores são apontados como fundamentais para equilibrar a detecção de fraudes e a minimização de impactos sobre transações legítimas.
+
+### Resultados e conclusões
+
+Os resultados discutidos pelos autores reforçam que a IA tem papel central na modernização dos mecanismos de segurança no setor bancário, especialmente pela capacidade de analisar grandes volumes de dados e reconhecer padrões complexos e sutis. O estudo conclui que métodos baseados em aprendizado de máquina e redes neurais tendem a ser mais eficazes que abordagens tradicionais, tanto para identificar atividades suspeitas quanto para prevenir incidentes semelhantes a fraudes históricas já registradas. Os autores também destacam que a IA deve ser entendida como ferramenta complementar às práticas de governança e segurança existentes.
+
+## Síntese crítica do estado da arte
+
+Os estudos analisados convergem ao demonstrar que a Inteligência Artificial amplia a capacidade de processamento analítico das organizações e possibilita decisões mais rápidas, precisas e baseadas em dados. Tanto no trabalho de Yu et al. (2024) quanto no de Tosta e Dias (2025), a IA aparece como instrumento capaz de lidar com ambientes complexos, em que a identificação de padrões é essencial para apoiar ações organizacionais e operacionais.
+
+Entretanto, há diferenças importantes entre os enfoques. Yu et al. (2024) oferecem uma visão mais abrangente e organizacional do uso da IA, destacando sua inserção em diferentes áreas funcionais e níveis de decisão. Já Tosta e Dias (2025) aprofundam a discussão no contexto bancário, enfatizando o papel da IA na análise de transações financeiras e na detecção de comportamentos anômalos. Assim, enquanto um estudo contribui para a compreensão da IA como ferramenta de apoio à decisão organizacional, o outro fornece base para entender sua aplicação em problemas analíticos específicos do setor financeiro.
+
+Uma lacuna observada na literatura está na articulação entre essas duas dimensões: embora haja estudos sobre IA na tomada de decisão organizacional e estudos sobre IA aplicada à segurança e prevenção de fraudes, ainda há espaço para pesquisas que investiguem o uso dessas técnicas na segmentação e compreensão do comportamento de clientes em bases financeiras. Nesse ponto, o presente projeto se alinha ao estado da arte ao propor uma aplicação de aprendizado de máquina voltada à identificação de padrões e perfis de clientes de cartão de crédito, conectando a perspectiva organizacional da IA com uma aplicação prática em dados financeiros.
+
 
 # Descrição do _dataset_ selecionado
 
