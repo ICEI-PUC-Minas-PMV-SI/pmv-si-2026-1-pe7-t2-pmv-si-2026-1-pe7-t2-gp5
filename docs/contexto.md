@@ -4,82 +4,49 @@ Texto descritivo introdutório apresentando a visão geral do projeto a ser dese
 
 ## Problema
 
-Nesta seção, você deve apresentar o problema que a sua investigação/experimentação busca resolver. Por exemplo, caso o _dataset_ selecionado, seja um _dataset_ que contenha uma série temporal com o preço de diversas ações da bolsa de valores, o problema pode estar relacionado a dificuldade em saber a melhor hora (hora certa??) de comprar ou então, de executar a venda de uma determinada ação.
+Instituições financeiras enfrentam o desafio constante de compreender o comportamento de seus clientes e identificar padrões que possam indicar mudanças no relacionamento com seus serviços. No caso específico de clientes de cartão de crédito, fatores como redução no uso do cartão, alterações no padrão de consumo ou mudanças no perfil financeiro podem indicar riscos de cancelamento do serviço ou mudanças no nível de engajamento com a instituição.
 
-Descreva ainda o contexto em que essa aplicação será usada, se houver: empresa parceira, tecnologias etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+A dificuldade em identificar antecipadamente esses padrões pode levar à perda de clientes, redução de receitas e aumento de custos relacionados à aquisição de novos usuários. Dessa forma, torna-se relevante investigar métodos que permitam identificar características comuns entre clientes e compreender melhor os diferentes perfis existentes na base de usuários.
 
-**Atenção:** Nesta etapa, apresente apenas informações reais e já confirmadas. Não antecipe requisitos técnicos detalhados, funcionalidades específicas ou desenhos de projeto — essa parte será desenvolvida posteriormente.
+Neste projeto, será utilizado um conjunto de dados público contendo informações sobre clientes de cartão de crédito, incluindo dados demográficos, limites de crédito, histórico de transações e indicadores de relacionamento com a instituição financeira. A investigação buscará explorar esses dados com o objetivo de identificar padrões e características relevantes que possam auxiliar na segmentação de clientes.
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+O estudo será conduzido em um contexto acadêmico, utilizando ferramentas de análise de dados e aprendizado de máquina com o objetivo de compreender como diferentes variáveis podem contribuir para a identificação de perfis de clientes e apoiar análises relacionadas ao comportamento de uso do cartão de crédito.
 
 ## Questão de pesquisa
 
-A questão de pesquisa é o ponto de partida e a base orientadora de todo o trabalho a ser desenvolvido. Ela deve estar diretamente alinhada ao problema identificado e expressar, de forma clara, o que se deseja investigar ou comprovar.
-
-O papel da questão de pesquisa é guiar todas as etapas do projeto — desde a definição da metodologia até a análise e interpretação dos resultados. Ao término da investigação ou experimentação, o objetivo é que seja possível responder a essa questão de forma fundamentada, utilizando evidências obtidas ao longo do processo.
-
-**Dica:** Formule a questão de pesquisa de forma específica e objetiva, evitando perguntas muito amplas ou genéricas. Pergunte-se: "Ao final do trabalho, minha pesquisa terá condições de responder claramente a essa pergunta?"
-
-> **Links Úteis**:
-> - [Questão de pesquisa](https://www.enago.com.br/academy/how-to-develop-good-research-question-types-examples/)
-> - [Problema de pesquisa](https://blog.even3.com.br/problema-de-pesquisa/)
+De que forma técnicas de aprendizado de máquina podem ser utilizadas para identificar padrões e realizar a segmentação de clientes de cartão de crédito com base em características demográficas, financeiras e comportamentais presentes no conjunto de dados analisado?
 
 ## Objetivos preliminares
 
-Nesta seção, você deve apresentar os objetivos preliminares do trabalho, deixando claro que o objetivo geral é experimentar modelos de aprendizado de máquina adequados para solucionar o problema descrito anteriormente.
+Objetivo geral
 
-Além do objetivo geral, é importante definir pelo menos dois objetivos específicos, que direcionem a investigação de acordo com o foco que o grupo pretende adotar. Esses objetivos específicos podem envolver: 
-* Explorar um determinado tipo de modelagem ou técnica de aprendizado de máquina;
-* Comparar diferentes abordagens para resolver o mesmo problema;
-* Aplicar o modelo em um cenário real ou simulado;
-* Otimizar parâmetros para melhorar métricas específicas de desempenho.
+Explorar e aplicar modelos de aprendizado de máquina para identificar padrões e segmentar clientes de cartão de crédito com base nas características presentes no conjunto de dados selecionado.
 
-Exemplo:
-Objetivo específico 1: Predizer a tendência de alta, estabilidade ou queda de uma determinada ação em uma janela de tempo definida.
-Objetivo específico 2: Estimar o valor exato da ação ao final do período analisado.
+Objetivos específicos
 
-**Importante:** À medida que a pesquisa/experimentação avança, os objetivos podem ser ajustados ou refinados. Mantenha essa seção atualizada no repositório para refletir o andamento e as novas decisões do projeto.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+* Realizar uma análise exploratória do conjunto de dados, identificando características, padrões e possíveis inconsistências nos dados disponíveis.
+* Investigar diferentes abordagens de aprendizado de máquina que possam ser aplicadas para segmentação ou classificação de clientes com base em seus atributos.
+* Comparar o desempenho de diferentes técnicas de modelagem para compreender quais abordagens apresentam melhores resultados no contexto do problema analisado.
 
 ## Justificativa
 
-Nesta seção, apresente a importância e a motivação para trabalhar com o conjunto de dados escolhido. Explique por que esse dataset é relevante e como ele se conecta ao problema identificado anteriormente.
+A análise do comportamento de clientes no setor financeiro é um tema amplamente estudado devido ao impacto direto que a retenção e o engajamento de clientes têm sobre a sustentabilidade das instituições financeiras. Segundo estudos do setor bancário, adquirir novos clientes pode custar significativamente mais do que manter clientes já existentes, tornando estratégias de retenção e segmentação fundamentais para a competitividade das empresas.
 
-Indique:
-* Razões para a escolha dos objetivos específicos – Justifique por que decidiu aprofundar sua investigação nessas metas, relacionando-as ao potencial de solução ou melhoria para o problema.
-* Relevância do estudo do problema – Mostre a importância de compreender e tratar a questão apresentada, tanto no contexto acadêmico quanto no profissional.
-* Impacto social, econômico ou ambiental – Descreva como o problema afeta a sociedade ou um setor específico, buscando sempre quantificar o impacto por meio de dados reais.
+Com o crescimento do volume de dados disponíveis nas organizações, técnicas de ciência de dados e aprendizado de máquina passaram a ser amplamente utilizadas para extrair conhecimento desses dados e apoiar processos de tomada de decisão. No contexto de cartões de crédito, a análise de padrões de uso, histórico de transações e perfil dos clientes pode fornecer informações relevantes para identificar diferentes perfis de consumidores e apoiar estratégias de relacionamento.
 
-**Importante:**
-* Apresente números, estatísticas e informações concretas, citando as fontes (relatórios, artigos científicos, portais oficiais etc.).
-* Mantenha a objetividade e a clareza, evitando argumentos genéricos.
-* Construa um texto coeso que conecte o problema, os objetivos e a relevância do trabalho.
+O conjunto de dados escolhido para este projeto contém informações relevantes sobre clientes de cartão de crédito, incluindo variáveis relacionadas ao perfil do cliente, nível de utilização do cartão, histórico de transações e relacionamento com a instituição financeira. Esses dados permitem explorar diferentes abordagens analíticas e aplicar técnicas de aprendizado de máquina para compreender melhor os padrões existentes na base de clientes.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Além disso, a investigação deste problema possui relevância acadêmica e prática, pois contribui para o entendimento de como métodos de ciência de dados podem ser aplicados para apoiar análises no setor financeiro, auxiliando na identificação de perfis de clientes e na geração de insights estratégicos.
 
 ## Público-Alvo
 
-Nesta seção, descreva quem poderá se beneficiar com a sua investigação, apresentando os diferentes perfis de pessoas ou grupos impactados.
+Os resultados deste estudo podem beneficiar diferentes perfis de profissionais e áreas de atuação relacionadas ao setor financeiro e à análise de dados.
 
-O objetivo aqui não é definir clientes específicos ou papéis exatos dentro da aplicação, mas sim compreender o perfil dos usuários e partes interessadas. Para isso, considere:
-* Conhecimentos prévios relacionados ao domínio do problema e ao uso de tecnologia;
-* Nível de familiaridade com recursos digitais e possíveis barreiras de uso;
-* Contexto profissional e hierárquico, quando aplicável (ex.: nível de decisão, responsabilidades, área de atuação);
-* Necessidades e expectativas que podem ser atendidas pelo projeto.
-
-**Dica:** Seja objetivo e baseie suas descrições em informações reais ou plausíveis para o contexto escolhido. Isso ajudará a manter o foco no desenvolvimento de soluções relevantes e aplicáveis.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Entre os principais grupos que podem se beneficiar da investigação estão:
+* Analistas de dados e cientistas de dados, interessados em compreender como técnicas de aprendizado de máquina podem ser aplicadas para análise de comportamento de clientes.
+* Profissionais do setor financeiro, especialmente aqueles envolvidos em áreas de relacionamento com clientes, marketing e gestão de produtos financeiros.
+* Gestores e tomadores de decisão, que podem utilizar insights derivados da análise de dados para apoiar estratégias de retenção e segmentação de clientes.
+* Pesquisadores e estudantes da área de Sistemas de Informação e Ciência de Dados, que buscam compreender aplicações práticas de aprendizado de máquina em problemas reais de negócio.
 
 ## Estado da arte
 
