@@ -1,24 +1,22 @@
 # Introdução
 
-O avanço das tecnologias de análise de dados e de inteligência artificial tem transformado a forma como organizações analisam informações e tomam decisões estratégicas. A Inteligência Artificial (IA) pode ser compreendida como sistemas capazes de analisar grandes volumes de dados, identificar correlações e padrões e apoiar processos de tomada de decisão em diferentes contextos organizacionais (YU et al., 2024).
+O avanço das tecnologias de análise de dados e da Inteligência Artificial (IA) tem transformado a forma como as organizações analisam informações e conduzem seus processos de decisão. A IA pode ser compreendida como um conjunto de sistemas capazes de processar grandes volumes de dados, identificar padrões, estabelecer correlações e apoiar a tomada de decisão em diferentes contextos organizacionais (YU et al., 2024). Nesse sentido, seu uso ultrapassa a automação de tarefas, passando a ocupar papel estratégico no apoio a decisões em níveis operacionais, táticos e estratégicos.
 
-A adoção dessas tecnologias tem ampliado a capacidade das organizações de extrair conhecimento a partir de dados, permitindo identificar tendências, prever comportamentos e apoiar decisões em níveis estratégicos, táticos e operacionais. Nesse contexto, a inteligência artificial tem sido utilizada em diferentes áreas organizacionais, contribuindo para apoiar gestores na análise de informações complexas e na definição de estratégias baseadas em dados (YU et al., 2024).
+Esse movimento é particularmente relevante em setores intensivos em informação, como o financeiro, no qual a velocidade das transações, a diversidade de perfis de clientes e a complexidade dos comportamentos de consumo exigem métodos analíticos cada vez mais robustos. Estudos recentes apontam que a IA vem sendo aplicada de forma crescente em operações, marketing, finanças e gestão estratégica, tanto como ferramenta de suporte à decisão quanto como mecanismo automatizado de análise e resposta (YU et al., 2024). No setor bancário, por sua vez, a aplicação de técnicas de aprendizado de máquina e redes neurais tem se destacado na identificação de padrões suspeitos, na análise de transações em tempo real e na prevenção de fraudes financeiras, evidenciando o potencial da IA para ampliar a segurança e a eficiência das operações (TOSTA; DIAS, 2025).
 
-Com o aumento do volume de dados disponíveis nas organizações, especialmente em setores intensivos em informação, como o setor financeiro, a aplicação de técnicas de ciência de dados e aprendizado de máquina tornou-se uma ferramenta relevante para compreender padrões de comportamento de clientes e apoiar processos decisórios.
+A literatura mostra, portanto, que a utilização de IA no setor financeiro não se limita à detecção de irregularidades. As mesmas bases conceituais que sustentam sistemas de prevenção a fraudes também podem ser adaptadas para compreender padrões de comportamento, segmentar perfis de clientes e gerar subsídios para estratégias de relacionamento e retenção. Em outras palavras, se a IA é capaz de reconhecer anomalias em transações bancárias, ela também pode ser aplicada para identificar regularidades, perfis de uso e características comportamentais em bases de clientes, contribuindo para análises mais refinadas e para a geração de conhecimento estratégico.
 
-Diante desse cenário, este projeto propõe investigar como técnicas de aprendizado de máquina podem ser utilizadas para identificar padrões em dados de clientes de cartão de crédito, contribuindo para a segmentação de perfis de usuários e para a compreensão do comportamento de consumo no setor financeiro.
+Diante desse cenário, este projeto propõe investigar como técnicas de aprendizado de máquina podem ser utilizadas para identificar padrões em dados de clientes de cartão de crédito, contribuindo para a segmentação de perfis de usuários e para a compreensão do comportamento de consumo no setor financeiro. A proposta está alinhada tanto com a literatura sobre o uso organizacional da IA na tomada de decisão (YU et al., 2024) quanto com estudos que evidenciam a eficácia de métodos baseados em IA para análise de grandes volumes de dados financeiros (TOSTA; DIAS, 2025).
 
 ## Problema
 
-Instituições financeiras enfrentam o desafio constante de compreender o comportamento de seus clientes e identificar padrões que possam indicar mudanças no relacionamento com seus serviços. No caso específico de clientes de cartão de crédito, fatores como redução no uso do cartão, alterações no padrão de consumo ou mudanças no perfil financeiro podem indicar riscos de cancelamento do serviço ou mudanças no nível de engajamento com a instituição.
+Instituições financeiras enfrentam o desafio constante de compreender o comportamento de seus clientes e identificar sinais que indiquem mudanças no relacionamento com seus serviços. No caso específico de clientes de cartão de crédito, fatores como redução na frequência de uso, alterações no padrão de consumo, variações no limite utilizado e mudanças no perfil financeiro podem indicar risco de cancelamento, queda no engajamento ou transformação no perfil de relacionamento com a instituição.
 
-A dificuldade em identificar antecipadamente esses padrões pode levar à perda de clientes, redução de receitas e aumento de custos relacionados à aquisição de novos usuários. Dessa forma, torna-se relevante investigar métodos que permitam identificar características comuns entre clientes e compreender melhor os diferentes perfis existentes na base de usuários.
+A dificuldade em identificar esses padrões de forma antecipada pode resultar em perda de clientes, diminuição de receitas e aumento de custos associados à aquisição de novos usuários. Além disso, o crescimento das transações digitais e o aumento da complexidade das operações financeiras ampliam a necessidade de métodos automatizados capazes de analisar grandes volumes de dados e reconhecer comportamentos relevantes em tempo hábil. Segundo Tosta e Dias (2025), a IA tem sido aplicada com sucesso no contexto bancário justamente por sua capacidade de identificar padrões suspeitos e processar dados em larga escala, o que demonstra seu potencial para apoiar análises financeiras mais complexas.
 
-Nesse contexto, a utilização de técnicas de inteligência artificial e aprendizado de máquina tem sido apontada como uma alternativa promissora para apoiar a análise de grandes volumes de dados e auxiliar na identificação de padrões relevantes para a tomada de decisão organizacional (YU et al., 2024). Esses métodos permitem analisar simultaneamente múltiplas variáveis e identificar relações complexas entre dados que, muitas vezes, não são facilmente percebidas por métodos tradicionais de análise.
+Sob outra perspectiva, Yu et al. (2024) destacam que a IA tem sido progressivamente incorporada aos processos decisórios organizacionais como instrumento de apoio à análise, à classificação e à recomendação. Isso indica que técnicas de aprendizado de máquina podem ser empregadas não apenas para detectar eventos anômalos, mas também para compreender regularidades, relações entre variáveis e agrupamentos de perfis em bases de clientes. Dessa forma, torna-se relevante investigar métodos que permitam identificar características comuns entre clientes de cartão de crédito e compreender melhor os diferentes perfis existentes na base analisada.
 
-Neste projeto, será utilizado um conjunto de dados público contendo informações sobre clientes de cartão de crédito, incluindo dados demográficos, limites de crédito, histórico de transações e indicadores de relacionamento com a instituição financeira. A investigação buscará explorar esses dados com o objetivo de identificar padrões e características relevantes que possam auxiliar na segmentação de clientes.
-
-O estudo será conduzido em um contexto acadêmico, utilizando ferramentas de análise de dados e aprendizado de máquina com o objetivo de compreender como diferentes variáveis podem contribuir para a identificação de perfis de clientes e apoiar análises relacionadas ao comportamento de uso do cartão de crédito.
+Assim, o problema central deste estudo consiste em entender como técnicas de aprendizado de máquina podem ser utilizadas para identificar padrões comportamentais e segmentar clientes de cartão de crédito com base em atributos demográficos, financeiros e de relacionamento, gerando informações úteis para análises estratégicas no setor financeiro.
 
 ## Questão de pesquisa
 
@@ -26,15 +24,15 @@ De que forma técnicas de aprendizado de máquina podem ser utilizadas para iden
 
 ## Objetivos preliminares
 
-Objetivo geral
-
 Explorar e aplicar modelos de aprendizado de máquina para identificar padrões e segmentar clientes de cartão de crédito com base nas características presentes no conjunto de dados selecionado.
 
-Objetivos específicos
+### Objetivos específicos
 
-* Realizar uma análise exploratória do conjunto de dados, identificando características, padrões e possíveis inconsistências nos dados disponíveis.
-* Investigar diferentes abordagens de aprendizado de máquina que possam ser aplicadas para segmentação ou classificação de clientes com base em seus atributos.
-* Comparar o desempenho de diferentes técnicas de modelagem para compreender quais abordagens apresentam melhores resultados no contexto do problema analisado.
+- Realizar uma análise exploratória do conjunto de dados, identificando características, padrões e possíveis inconsistências nos dados disponíveis.
+- Investigar diferentes abordagens de aprendizado de máquina que possam ser aplicadas para segmentação ou classificação de clientes com base em seus atributos.
+- Comparar o desempenho de diferentes técnicas de modelagem para compreender quais abordagens apresentam melhores resultados no contexto do problema analisado.
+- Relacionar os resultados obtidos à literatura sobre uso da IA em processos decisórios organizacionais e em análises no setor financeiro.
+- Avaliar de que forma os padrões identificados podem contribuir para a compreensão do comportamento de clientes e para a geração de insights estratégicos.
 
 ## Justificativa
 
@@ -160,6 +158,8 @@ Nesta etapa, o grupo deverá produzir um vídeo de 5 a 8 minutos apresentando o 
 
 YU, Abraham Sin Oih et al. Tomada de decisão nas organizações: o que muda com a inteligência artificial? Estudos Avançados, São Paulo, v. 38, n. 111, p. 327–348, maio/ago. 2024. Disponível em: https://doi.org/10.1590/s0103-4014.202438111.017
 . Acesso em: 6 mar. 2026.
+
+Tosta, P. L. M., & Dias, J. C. (2025). Detecção de fraudes em transações bancárias utilizando inteligência artificial. Revista processando o saber, 17(01), 21–37. https://doi.org/10.5281/zenodo.15477217 Acesso em: 7 mar. 2026.
 
 Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho utilizando o padrão ABNT.
 
