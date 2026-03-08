@@ -290,7 +290,9 @@ Tosta, P. L. M., & Dias, J. C. (2025). Detecção de fraudes em transações ban
 
 BOTELHO, Delane; TOSTES, Frederico Damian. Modelagem de probabilidade de churn. Revista de Administração de Empresas, São Paulo, v. 50, n. 4, p. 396–410, out./dez. 2010. Disponível em: https://doi.org/10.1590/S0034-75902010000400005. Acesso em: 7 mar. 2026.
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho utilizando o padrão ABNT.
+Gao, J., Sun, W., & Sui, X. (n.d.). Research on Default Prediction for Credit Card Users Based on XGBoost-LSTM Model. https://doi.org/10.1155/2021/5080472
+
+Agrawal, R., Khanna, A. & Hamdare, S. Analyzing and Rewarding Credit Card Spending Habits in India: a Machine Learning Approach. Int J Comput Intell Syst 18, 165 (2025). https://doi.org/10.1007/s44196-025-00899-0
 
 > **Links Úteis**:
 > - [Padrão ABNT PUC Minas](https://portal.pucminas.br/biblioteca/index_padrao.php?pagina=5886)
