@@ -174,6 +174,38 @@ O estudo avaliou o resultado com a abordagem tradicional de recompensa utilizado
 
 Os estudos demonstraram que a análise de clusterização segregou com sucesso os comportamentos dos clientes em diferentes tipos de cartões e que por meio do algoritmo de ML demonstrou forte performace em predizer o comportamento dos clientes quando exposto as recompensas.
 
+## Estudo 4 – Dana Al‑Najjar, Nadia Al‑Rousan, Hazem Al‑Najjar, (2022)
+
+### Problema e contexto
+
+Este trabalho foca em previsão de churn de cartões, testando vários algoritmos e estratégias de seleção de variáveis para identificar os preditores mais relevantes do abandono. Útil para entender quais medidas transacionais influenciam mais a rotatividade em aplicações práticas, o nome da estudo é "Machine Learning to Develop Credit Card Customer Churn Prediction".
+
+### Dados utilizados
+
+Os dados utilizados foram obtidos por meio das empresas participantes como bancos comerciais, serviçoes financeiros e empresas de cartões de crédito.
+
+### Abordagem e algoritmos
+Os autores utilizaram os seguintes algoritmos:
+
+- Bayesian network
+- C5 tree
+- CHAID
+- CR tree
+- Rede neural
+- Deep Learning
+
+### Métricas de avaliação
+
+O estudo avaliou o resultado com a abordagem tradicional de recompensa utilizado no mercado em geral.
+
+- precisão
+- recall
+- F1-score
+
+### Resultados e conclusões
+
+O estudo buscou responder quais são os mais relevantes preditores para Churn nas transações com cartões de crédito. 
+
 ## Síntese crítica do estado da arte
 
 Os estudos analisados convergem ao demonstrar que a Inteligência Artificial amplia a capacidade de processamento analítico das organizações e possibilita decisões mais rápidas, precisas e baseadas em dados. Tanto no trabalho de Yu et al. (2024) quanto no de Tosta e Dias (2025), a IA aparece como instrumento capaz de lidar com ambientes complexos, em que a identificação de padrões é essencial para apoiar ações organizacionais e operacionais.
