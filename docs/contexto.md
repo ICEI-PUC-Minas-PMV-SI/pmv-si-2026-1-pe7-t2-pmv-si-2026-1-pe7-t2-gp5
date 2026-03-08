@@ -206,35 +206,46 @@ O estudo avaliou o resultado com a abordagem tradicional de recompensa utilizado
 
 O estudo buscou responder quais são os mais relevantes preditores para Churn nas transações com cartões de crédito.
 
-## Estudo 5 – Botelho e Tostes (2010)
+## Estudo 5 – Li e Yan (2025)
 
 ### Problema e contexto
 
-O estudo aborda o desafio estratégico do churn — rotatividade de clientes — em empresas de varejo que operam com cartões de crédito próprios (private label). O foco central está na negligência com que a gestão de retenção costuma ser tratada nesse segmento, o que resulta em perda de receita recorrente e na descontinuidade de informações valiosas sobre o comportamento de consumo dos clientes. O trabalho parte do argumento de que a antecipação do abandono é condição necessária para a adoção de ações preventivas mais eficientes do que as estratégias convencionais de aquisição de novos clientes.
+O estudo investiga a previsão de churn de clientes bancários de crédito, com ênfase não apenas na acurácia preditiva dos modelos, mas também na interpretabilidade dos resultados. O problema central está na dificuldade das instituições financeiras em não apenas identificar clientes propensos ao abandono, mas também em compreender quais variáveis explicam esse comportamento, de forma a subsidiar ações de retenção fundamentadas em evidências causais.
 
 ### Dados utilizados
 
-O estudo utilizou dados reais de 100.000 clientes de uma grande rede varejista brasileira. A base foi dividida em duas amostras: uma de calibração, composta por 70.000 registros, utilizada para o ajuste do modelo; e uma de validação, com os 30.000 clientes restantes, destinada à verificação do desempenho preditivo. Os dados contemplam variáveis demográficas e comportamentais dos clientes, refletindo características de uso do cartão e de relacionamento com a varejista.
+O estudo utilizou dados reais de clientes de crédito bancário, com variáveis comportamentais e transacionais como frequência de transações, volume total transacionado e quantidade de produtos financeiros contratados. A base apresentava desbalanceamento entre as classes (clientes que permanecem versus clientes que abandonam), o que foi tratado por meio de técnicas de reamostragem aplicadas antes do treinamento dos modelos.
 
 ### Abordagem e algoritmos
 
-A pesquisa adotou uma abordagem quantitativa por meio do modelo de **Regressão Logística**, aplicado para a construção de um score de risco de abandono. Variáveis demográficas e comportamentais foram combinadas para estimar a probabilidade de churn individual de cada cliente, gerando um ranqueamento de risco que permite priorizar ações de retenção sobre os perfis mais propensos à evasão.
+A pesquisa adotou abordagem quantitativa com foco em modelos de aprendizado de máquina supervisionado. O modelo de melhor desempenho foi o **XGBoost**, treinado após o tratamento do desbalanceamento de classes. Além da predição, os autores aplicaram dois métodos de interpretabilidade:
+
+- **SHAP values** (*SHapley Additive exPlanations*): para identificar a contribuição de cada variável na predição individual e global do modelo
+- **R-learner**: método de inferência causal utilizado para estimar o impacto real de cada variável sobre a decisão de abandono do cliente
 
 ### Métricas de avaliação
 
-A precisão preditiva do modelo foi avaliada por meio da **Curva ROC** e do **teste de Kolmogorov-Smirnov (KS)**, ambos utilizados para medir o poder discriminante do modelo, isto é, sua capacidade de separar com eficácia os clientes com tendência ao abandono daqueles com tendência à permanência ativa.
+O desempenho do modelo foi avaliado por um conjunto abrangente de métricas:
+
+- acurácia
+- precisão
+- recall
+- F1-score
+- AUC (*Area Under the Curve*)
+
+O modelo XGBoost atingiu 97% em todas essas métricas, demonstrando alto poder preditivo e capacidade de generalização.
 
 ### Resultados e conclusões
 
-O modelo demonstrou alta eficácia na identificação dos clientes com maior propensão ao abandono do serviço. Os autores concluem que a antecipação do churn, viabilizada pelo score de risco, permite direcionar ações de marketing direto de forma muito mais econômica e eficiente do que a estratégia de aquisição de novos clientes. O estudo reforça, portanto, que a modelagem preditiva com dados comportamentais e demográficos é uma abordagem viável e de alto valor estratégico para a retenção de clientes em contextos de crédito ao varejo.
+Os resultados indicaram que as variáveis mais relevantes para a predição do churn foram a frequência de transações, o volume total transacionado e o número de produtos financeiros do cliente. Os autores concluem que a combinação entre modelos preditivos de alta performance e técnicas de interpretabilidade representa um avanço significativo para o setor bancário, pois permite não apenas antecipar o abandono, mas também compreender suas causas e orientar estratégias de retenção de forma mais precisa e personalizada.
 
 ## Síntese crítica do estado da arte
 
-Os estudos analisados convergem ao demonstrar que a Inteligência Artificial e os modelos preditivos ampliam a capacidade de processamento analítico das organizações e possibilitam decisões mais rápidas, precisas e baseadas em dados. Em Yu et al. (2024), Tosta e Dias (2025), Agrawal et al. (2025), Al-Najjar et al. (2022) e Botelho e Tostes (2010), a IA e o aprendizado de máquina aparecem como instrumentos capazes de lidar com ambientes complexos, nos quais a identificação de padrões é condição essencial para apoiar ações organizacionais, operacionais e estratégicas.
+Os estudos analisados convergem ao demonstrar que a Inteligência Artificial e os modelos preditivos ampliam a capacidade de processamento analítico das organizações e possibilitam decisões mais rápidas, precisas e baseadas em dados. Em Yu et al. (2024), Tosta e Dias (2025), Agrawal et al. (2025), Al-Najjar et al. (2022) e Li e Yan (2025), a IA e o aprendizado de máquina aparecem como instrumentos capazes de lidar com ambientes complexos, nos quais a identificação de padrões é condição essencial para apoiar ações organizacionais, operacionais e estratégicas.
 
 Entretanto, há diferenças importantes entre os enfoques. Yu et al. (2024) oferecem uma visão mais abrangente e organizacional do uso da IA, destacando sua inserção em diferentes áreas funcionais e níveis de decisão. Tosta e Dias (2025) aprofundam a discussão no contexto bancário, enfatizando o papel da IA na análise de transações financeiras e na detecção de comportamentos anômalos. Agrawal et al. (2025) deslocam o foco para a segmentação de hábitos de consumo e estratégias de recompensa em cartões de crédito, demonstrando que algoritmos não supervisionados de clusterização são capazes de identificar grupos comportamentais distintos entre portadores de cartão. Já Al-Najjar et al. (2022) concentram-se especificamente na previsão de churn, comparando múltiplos algoritmos supervisionados para identificar os preditores mais relevantes do abandono em bases de clientes de cartão de crédito.
 
-A contribuição de Botelho e Tostes (2010) complementa esse conjunto ao evidenciar, com dados reais do contexto brasileiro, que a Regressão Logística aplicada a bases de clientes de crédito ao varejo é capaz de gerar scores preditivos eficazes, mensuráveis pela Curva ROC e pelo teste KS. Esse resultado dialoga diretamente com o objetivo deste projeto, que busca aplicar técnicas de aprendizado de máquina para identificar padrões comportamentais em clientes de cartão de crédito. Ao conectar os cinco estudos, observa-se uma progressão temática: da IA como ferramenta de decisão organizacional (Yu et al., 2024), passando pela sua aplicação em segurança financeira (Tosta e Dias, 2025) e na segmentação de comportamentos de consumo (Agrawal et al., 2025), até a predição direta de churn por múltiplos algoritmos (Al-Najjar et al., 2022) e por modelagem preditiva aplicada ao varejo financeiro brasileiro (Botelho e Tostes, 2010). Essa articulação reforça a pertinência e a coerência do presente projeto no âmbito da literatura existente.
+A contribuição de Li e Yan (2025) complementa esse conjunto ao avançar em uma dimensão ainda pouco explorada nos demais estudos: a interpretabilidade dos modelos preditivos. Por meio do XGBoost combinado com SHAP values e inferência causal via R-learner, os autores não apenas predizem o churn com 97% de acurácia, mas identificam as causas subjacentes ao abandono, como frequência de transações e quantidade de produtos contratados. Esse resultado dialoga diretamente com o objetivo deste projeto, que busca não só classificar clientes de cartão de crédito, mas também compreender os padrões comportamentais que distinguem os diferentes perfis. Ao conectar os cinco estudos, observa-se uma progressão temática: da IA como ferramenta de decisão organizacional (Yu et al., 2024), passando pela sua aplicação em segurança financeira (Tosta e Dias, 2025) e na segmentação de comportamentos de consumo (Agrawal et al., 2025), pela predição de churn por múltiplos algoritmos (Al-Najjar et al., 2022), até a interpretabilidade causal de modelos preditivos aplicados ao crédito bancário (Li e Yan, 2025). Essa articulação reforça a pertinência e a coerência do presente projeto no âmbito da literatura existente.
 
 
 # Descrição do _dataset_ selecionado
@@ -288,7 +299,7 @@ YU, Abraham Sin Oih et al. Tomada de decisão nas organizações: o que muda com
 
 Tosta, P. L. M., & Dias, J. C. (2025). Detecção de fraudes em transações bancárias utilizando inteligência artificial. Revista processando o saber, 17(01), 21–37. https://doi.org/10.5281/zenodo.15477217 Acesso em: 7 mar. 2026.
 
-BOTELHO, Delane; TOSTES, Frederico Damian. Modelagem de probabilidade de churn. Revista de Administração de Empresas, São Paulo, v. 50, n. 4, p. 396–410, out./dez. 2010. Disponível em: https://doi.org/10.1590/S0034-75902010000400005. Acesso em: 7 mar. 2026.
+LI, Ying; YAN, Keyue. Prediction of bank credit customers churn based on machine learning and interpretability analysis. Data Science in Finance and Economics, v. 5, n. 1, p. 19–34, 2025. Disponível em: https://doi.org/10.3934/DSFE.2025002. Acesso em: 7 mar. 2026.
 
 Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho utilizando o padrão ABNT.
 
