@@ -161,6 +161,31 @@ Utilizaremos para o projeto o data set abaixo disponibilizado pelo Kaggle:
 * Entre os atributos existentes contém por exemplo nível educacional, idade, categoria do cartão, nível salarial, limite de crédito, situação matrimonial, média de compra, quantidade de dependente, idade do consumidor, gênero etc.
 * Atributos – Tabela com nome, descrição, tipo, unidade de medida (se aplicável) e exemplos de valores.
 
+## Estrutura do Dateset
+| Coluna | Tipo de Dado | Descrição |
+|---|---|--|
+| CLIENTNUM | Inteiro |  Identificador único para cada cliente. |
+| Attrition_Flag | Booleano | Indicador que mostra se o cliente cancelou o serviço ou não. |
+| Customer_Age | Inteiro | Idade do cliente. |
+| Gender | Texto | Sexo do cliente. |
+| Dependent_count | Inteiro | Número de dependentes que o cliente possui. |
+| Education_Level | Texto | Nível de escolaridade do cliente. |
+| Marital_Status | Texto | Estado civil do cliente. |
+| Income_Category | Texto | Categoria de renda do cliente. |
+| Card_Category | Texto | Tipo de cartão que o cliente possui. |
+| Months_on_book | Inteiro | Há quanto tempo o cliente está cadastrado. |
+| Total_Relationship_Count | Inteiro | Número total de relacionamentos que o cliente possui com a operadora do cartão de crédito. |
+| Months_Inactive_12_mon | Inteiro | Número de meses em que o cliente esteve inativo nos últimos doze meses. |
+| Contacts_Count_12_mon | Inteiro | Número de contatos que o cliente teve nos últimos doze meses. |
+| Credit_Limit | Inteiro | Limite de crédito do cliente. |
+| Total_Revolving_Bal | Inteiro | Saldo rotativo total do cliente. |
+| Avg_Open_To_Buy | Inteiro | Proporção média de abertura de capital em relação à compra por cliente. |
+| Total_Amt_Chng_Q4_Q1 | Inteiro | Variação total do quarto trimestre para o primeiro trimestre. |
+| Total_Trans_Amt | Inteiro | Valor total da transação. |
+| Total_Trans_Ct | Inteiro | Número total de transações. |
+| Total_Ct_Chng_Q4_Q1 | Inteiro | Variação total do quarto trimestre para o primeiro trimestre |
+| Avg_Utilization_Ratio | Inteiro | Taxa média de utilização do cliente. |
+| Naive_Bayes_Classifier | Inteiro | Classificador Naive Bayes para prever se um cliente irá cancelar sua assinatura |
 
 # Canvas analítico
 
