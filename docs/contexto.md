@@ -178,7 +178,7 @@ Os estudos demonstraram que a análise de clusterização segregou com sucesso o
 
 ### Problema e contexto
 
-Este trabalho foca em previsão de churn de cartões, testando vários algoritmos e estratégias de seleção de variáveis para identificar os preditores mais relevantes do abandono. Útil para entender quais medidas transacionais influenciam mais a rotatividade em aplicações práticas, o nome da estudo é "Machine Learning to Develop Credit Card Customer Churn Prediction".
+Este trabalho foca em previsão de churn de cartões, testando vários algoritmos e estratégias de seleção de variáveis para identificar os preditores mais relevantes do abandono. Útil para entender quais medidas transacionais influenciam mais a rotatividade em aplicações práticas, o nome da estudo é "Research on Default Prediction for Credit Card Users Based on XGBoost-LSTM Model".
 
 ### Dados utilizados
 
@@ -294,14 +294,12 @@ Nesta etapa, o grupo deverá produzir um vídeo de 5 a 8 minutos apresentando o 
 
 # Referências
 
-YU, Abraham Sin Oih et al. Tomada de decisão nas organizações: o que muda com a inteligência artificial? Estudos Avançados, São Paulo, v. 38, n. 111, p. 327–348, maio/ago. 2024. Disponível em: https://doi.org/10.1590/s0103-4014.202438111.017
-. Acesso em: 6 mar. 2026.
+AGRAWAL, Renuka; KHANNA, Aryan; HAMDARE, Safa. Analyzing and rewarding credit card spending habits in India: a machine learning approach. International Journal of Computational Intelligence Systems, [s. l.], v. 18, art. 165, 2025. Disponível em: <https://doi.org/10.1007/s44196-025-00899-0>. Acesso em: 7 mar. 2026.
 
-Tosta, P. L. M., & Dias, J. C. (2025). Detecção de fraudes em transações bancárias utilizando inteligência artificial. Revista processando o saber, 17(01), 21–37. https://doi.org/10.5281/zenodo.15477217 Acesso em: 7 mar. 2026.
+GAO, Jing; SUN, Wenjun; SUI, Xin. Research on default prediction for credit card users based on XGBoost-LSTM model. Discrete Dynamics in Nature and Society, [s. l.], v. 2021, p. 1-13, 2021. Disponível em: <https://doi.org/10.1155/2021/5080472>. Acesso em: 7 mar. 2026.
 
-LI, Ying; YAN, Keyue. Prediction of bank credit customers churn based on machine learning and interpretability analysis. Data Science in Finance and Economics, v. 5, n. 1, p. 19–34, 2025. Disponível em: https://doi.org/10.3934/DSFE.2025002. Acesso em: 7 mar. 2026.
+LI, Ying; YAN, Keyue. Prediction of bank credit customers churn based on machine learning and interpretability analysis. Data Science in Finance and Economics, v. 5, n. 1, p. 19–34, 2025. Disponível em: <https://doi.org/10.3934/DSFE.2025002>. Acesso em: 8 mar. 2026.
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho utilizando o padrão ABNT.
+TOSTA, Pedro Lucas Maranini; DIAS, Jonatas Cerqueira. Detecção de fraudes em transações bancárias utilizando inteligência artificial. Revista Processando o Saber, [s. l.], v. 17, n. 1, p. 21-37, 2025. Disponível em: <https://www.fatecpg.edu.br/revista/index.php/ps/article/view/341>. Acesso em: 7 mar. 2026. DOI: <https://doi.org/10.5281/zenodo.15477217>.
 
-> **Links Úteis**:
-> - [Padrão ABNT PUC Minas](https://portal.pucminas.br/biblioteca/index_padrao.php?pagina=5886)
+YU, Abraham Sin Oih et al. Tomada de decisão nas organizações: o que muda com a inteligência artificial? Estudos Avançados, São Paulo, v. 38, n. 111, p. 327-348, maio/ago. 2024. Disponível em: <https://doi.org/10.1590/s0103-4014.202438111.017>. Acesso em: 6 mar. 2026.
