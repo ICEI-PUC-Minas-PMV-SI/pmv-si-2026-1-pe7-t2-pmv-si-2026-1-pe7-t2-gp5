@@ -178,7 +178,7 @@ Os estudos demonstraram que a análise de clusterização segregou com sucesso o
 
 ### Problema e contexto
 
-Este trabalho foca em previsão de churn de cartões, testando vários algoritmos e estratégias de seleção de variáveis para identificar os preditores mais relevantes do abandono. Útil para entender quais medidas transacionais influenciam mais a rotatividade em aplicações práticas, o nome da estudo é "Machine Learning to Develop Credit Card Customer Churn Prediction".
+Este trabalho foca em previsão de churn de cartões, testando vários algoritmos e estratégias de seleção de variáveis para identificar os preditores mais relevantes do abandono. Útil para entender quais medidas transacionais influenciam mais a rotatividade em aplicações práticas, o nome da estudo é "Research on Default Prediction for Credit Card Users Based on XGBoost-LSTM Model".
 
 ### Dados utilizados
 
