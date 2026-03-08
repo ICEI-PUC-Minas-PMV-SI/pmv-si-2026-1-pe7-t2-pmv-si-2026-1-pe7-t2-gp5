@@ -159,7 +159,7 @@ Os autores utilizaram os seguintes algoritmos:
 
 - aprendizado de máquina
 - algoritmos não supervisionados
-- KMN 
+- KMN
 - Análise de clusterização
 
 ### Métricas de avaliação
@@ -204,15 +204,37 @@ O estudo avaliou o resultado com a abordagem tradicional de recompensa utilizado
 
 ### Resultados e conclusões
 
-O estudo buscou responder quais são os mais relevantes preditores para Churn nas transações com cartões de crédito. 
+O estudo buscou responder quais são os mais relevantes preditores para Churn nas transações com cartões de crédito.
+
+## Estudo 5 – Botelho e Tostes (2010)
+
+### Problema e contexto
+
+O estudo aborda o desafio estratégico do churn — rotatividade de clientes — em empresas de varejo que operam com cartões de crédito próprios (private label). O foco central está na negligência com que a gestão de retenção costuma ser tratada nesse segmento, o que resulta em perda de receita recorrente e na descontinuidade de informações valiosas sobre o comportamento de consumo dos clientes. O trabalho parte do argumento de que a antecipação do abandono é condição necessária para a adoção de ações preventivas mais eficientes do que as estratégias convencionais de aquisição de novos clientes.
+
+### Dados utilizados
+
+O estudo utilizou dados reais de 100.000 clientes de uma grande rede varejista brasileira. A base foi dividida em duas amostras: uma de calibração, composta por 70.000 registros, utilizada para o ajuste do modelo; e uma de validação, com os 30.000 clientes restantes, destinada à verificação do desempenho preditivo. Os dados contemplam variáveis demográficas e comportamentais dos clientes, refletindo características de uso do cartão e de relacionamento com a varejista.
+
+### Abordagem e algoritmos
+
+A pesquisa adotou uma abordagem quantitativa por meio do modelo de **Regressão Logística**, aplicado para a construção de um score de risco de abandono. Variáveis demográficas e comportamentais foram combinadas para estimar a probabilidade de churn individual de cada cliente, gerando um ranqueamento de risco que permite priorizar ações de retenção sobre os perfis mais propensos à evasão.
+
+### Métricas de avaliação
+
+A precisão preditiva do modelo foi avaliada por meio da **Curva ROC** e do **teste de Kolmogorov-Smirnov (KS)**, ambos utilizados para medir o poder discriminante do modelo, isto é, sua capacidade de separar com eficácia os clientes com tendência ao abandono daqueles com tendência à permanência ativa.
+
+### Resultados e conclusões
+
+O modelo demonstrou alta eficácia na identificação dos clientes com maior propensão ao abandono do serviço. Os autores concluem que a antecipação do churn, viabilizada pelo score de risco, permite direcionar ações de marketing direto de forma muito mais econômica e eficiente do que a estratégia de aquisição de novos clientes. O estudo reforça, portanto, que a modelagem preditiva com dados comportamentais e demográficos é uma abordagem viável e de alto valor estratégico para a retenção de clientes em contextos de crédito ao varejo.
 
 ## Síntese crítica do estado da arte
 
-Os estudos analisados convergem ao demonstrar que a Inteligência Artificial amplia a capacidade de processamento analítico das organizações e possibilita decisões mais rápidas, precisas e baseadas em dados. Tanto no trabalho de Yu et al. (2024) quanto no de Tosta e Dias (2025), a IA aparece como instrumento capaz de lidar com ambientes complexos, em que a identificação de padrões é essencial para apoiar ações organizacionais e operacionais.
+Os estudos analisados convergem ao demonstrar que a Inteligência Artificial e os modelos preditivos ampliam a capacidade de processamento analítico das organizações e possibilitam decisões mais rápidas, precisas e baseadas em dados. Em Yu et al. (2024), Tosta e Dias (2025), Agrawal et al. (2025), Al-Najjar et al. (2022) e Botelho e Tostes (2010), a IA e o aprendizado de máquina aparecem como instrumentos capazes de lidar com ambientes complexos, nos quais a identificação de padrões é condição essencial para apoiar ações organizacionais, operacionais e estratégicas.
 
-Entretanto, há diferenças importantes entre os enfoques. Yu et al. (2024) oferecem uma visão mais abrangente e organizacional do uso da IA, destacando sua inserção em diferentes áreas funcionais e níveis de decisão. Já Tosta e Dias (2025) aprofundam a discussão no contexto bancário, enfatizando o papel da IA na análise de transações financeiras e na detecção de comportamentos anômalos. Assim, enquanto um estudo contribui para a compreensão da IA como ferramenta de apoio à decisão organizacional, o outro fornece base para entender sua aplicação em problemas analíticos específicos do setor financeiro.
+Entretanto, há diferenças importantes entre os enfoques. Yu et al. (2024) oferecem uma visão mais abrangente e organizacional do uso da IA, destacando sua inserção em diferentes áreas funcionais e níveis de decisão. Tosta e Dias (2025) aprofundam a discussão no contexto bancário, enfatizando o papel da IA na análise de transações financeiras e na detecção de comportamentos anômalos. Agrawal et al. (2025) deslocam o foco para a segmentação de hábitos de consumo e estratégias de recompensa em cartões de crédito, demonstrando que algoritmos não supervisionados de clusterização são capazes de identificar grupos comportamentais distintos entre portadores de cartão. Já Al-Najjar et al. (2022) concentram-se especificamente na previsão de churn, comparando múltiplos algoritmos supervisionados para identificar os preditores mais relevantes do abandono em bases de clientes de cartão de crédito.
 
-Uma lacuna observada na literatura está na articulação entre essas duas dimensões: embora haja estudos sobre IA na tomada de decisão organizacional e estudos sobre IA aplicada à segurança e prevenção de fraudes, ainda há espaço para pesquisas que investiguem o uso dessas técnicas na segmentação e compreensão do comportamento de clientes em bases financeiras. Nesse ponto, o presente projeto se alinha ao estado da arte ao propor uma aplicação de aprendizado de máquina voltada à identificação de padrões e perfis de clientes de cartão de crédito, conectando a perspectiva organizacional da IA com uma aplicação prática em dados financeiros.
+A contribuição de Botelho e Tostes (2010) complementa esse conjunto ao evidenciar, com dados reais do contexto brasileiro, que a Regressão Logística aplicada a bases de clientes de crédito ao varejo é capaz de gerar scores preditivos eficazes, mensuráveis pela Curva ROC e pelo teste KS. Esse resultado dialoga diretamente com o objetivo deste projeto, que busca aplicar técnicas de aprendizado de máquina para identificar padrões comportamentais em clientes de cartão de crédito. Ao conectar os cinco estudos, observa-se uma progressão temática: da IA como ferramenta de decisão organizacional (Yu et al., 2024), passando pela sua aplicação em segurança financeira (Tosta e Dias, 2025) e na segmentação de comportamentos de consumo (Agrawal et al., 2025), até a predição direta de churn por múltiplos algoritmos (Al-Najjar et al., 2022) e por modelagem preditiva aplicada ao varejo financeiro brasileiro (Botelho e Tostes, 2010). Essa articulação reforça a pertinência e a coerência do presente projeto no âmbito da literatura existente.
 
 
 # Descrição do _dataset_ selecionado
@@ -265,6 +287,8 @@ YU, Abraham Sin Oih et al. Tomada de decisão nas organizações: o que muda com
 . Acesso em: 6 mar. 2026.
 
 Tosta, P. L. M., & Dias, J. C. (2025). Detecção de fraudes em transações bancárias utilizando inteligência artificial. Revista processando o saber, 17(01), 21–37. https://doi.org/10.5281/zenodo.15477217 Acesso em: 7 mar. 2026.
+
+BOTELHO, Delane; TOSTES, Frederico Damian. Modelagem de probabilidade de churn. Revista de Administração de Empresas, São Paulo, v. 50, n. 4, p. 396–410, out./dez. 2010. Disponível em: https://doi.org/10.1590/S0034-75902010000400005. Acesso em: 7 mar. 2026.
 
 Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho utilizando o padrão ABNT.
 
