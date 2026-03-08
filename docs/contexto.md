@@ -144,6 +144,36 @@ Esses indicadores são apontados como fundamentais para equilibrar a detecção 
 
 Os resultados discutidos pelos autores reforçam que a IA tem papel central na modernização dos mecanismos de segurança no setor bancário, especialmente pela capacidade de analisar grandes volumes de dados e reconhecer padrões complexos e sutis. O estudo conclui que métodos baseados em aprendizado de máquina e redes neurais tendem a ser mais eficazes que abordagens tradicionais, tanto para identificar atividades suspeitas quanto para prevenir incidentes semelhantes a fraudes históricas já registradas. Os autores também destacam que a IA deve ser entendida como ferramenta complementar às práticas de governança e segurança existentes.
 
+## Estudo 3 – Renuka Agrawal, Aryan Khanna, Safa Hamdare (2025)
+
+### Problema e contexto
+
+O estudo com o nome "Analyzing and Rewarding Credit Card Spending Habits in India: a Machine Learning Approach" foca em investigar os costumes dos consumidores na Índia e avaliar a melhor estratégia de recompensa oferecida pela empresas de cartão de crédito aos seus clientes.
+
+### Dados utilizados
+
+Os dados utilizados foram obtidos por meio dos bancos de dados existente pelas empresas.
+
+### Abordagem e algoritmos
+Os autores utilizaram os seguintes algoritmos:
+
+- aprendizado de máquina
+- algoritmos não supervisionados
+- KMN 
+- Análise de clusterização
+
+### Métricas de avaliação
+
+O estudo avaliou o resultado com a abordagem tradicional de recompensa utilizado no mercado em geral.
+
+- precisão
+- recall
+- F1-score
+
+### Resultados e conclusões
+
+Os estudos demonstraram que a análise de clusterização segregou com sucesso os comportamentos dos clientes em diferentes tipos de cartões e que por meio do algoritmo de ML demonstrou forte performace em predizer o comportamento dos clientes quando exposto as recompensas.
+
 ## Síntese crítica do estado da arte
 
 Os estudos analisados convergem ao demonstrar que a Inteligência Artificial amplia a capacidade de processamento analítico das organizações e possibilita decisões mais rápidas, precisas e baseadas em dados. Tanto no trabalho de Yu et al. (2024) quanto no de Tosta e Dias (2025), a IA aparece como instrumento capaz de lidar com ambientes complexos, em que a identificação de padrões é essencial para apoiar ações organizacionais e operacionais.
