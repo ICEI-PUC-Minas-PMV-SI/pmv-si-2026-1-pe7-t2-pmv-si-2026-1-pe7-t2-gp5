@@ -191,7 +191,7 @@ Utilizaremos para o projeto o data set abaixo disponibilizado pelo Kaggle:
 
 Nesta seção, apresentamos o **Software Analytics Canvas**, que estrutura a organização estratégica do projeto e o modelo de análise para a segmentação de clientes de cartão de crédito. Este artefato serve como guia visual para alinhar os objetivos técnicos de processamento de dados com as necessidades de negócio do setor financeiro.
 
-![Software Analytics Canvas - Segmentação Clientes Cartão Crédito](docs/img/Software-Analtics-Canvas-v1.0.jpg)
+![Software Analytics Canvas - Segmentação Clientes Cartão Crédito](img/Software-Analtics-Canvas-v1.0.jpg)
 
 # Vídeo de apresentação da Etapa 01
 
