@@ -155,13 +155,12 @@ Uma lacuna observada na literatura está na articulação entre essas duas dimen
 
 # Descrição do _dataset_ selecionado
 
-Nesta seção, apresente uma visão clara e objetiva do dataset selecionado, incluindo:
-* Identificação e origem – Nome, link de acesso, fonte (instituição, repositório, API etc.) e licença de uso.
-* Visão geral – Total de registros e atributos, período coberto e breve contextualização.
+Utilizaremos para o projeto o data set abaixo disponibilizado pelo Kaggle:
+* "Predicting Credit Card Customer Segmentation", https://www.kaggle.com/datasets/thedevastator/predicting-credit-card-customer-attrition-with-m, licença pública de uso.
+* O dataframe do projeto possui 10127 linhas e 23 colunas com diversos dados sobre a utilização do cartão de créditos. 
+* Entre os atributos existentes contém por exemplo nível educacional, idade, categoria do cartão, nível salarial, limite de crédito, situação matrimonial, média de compra, quantidade de dependente, idade do consumidor, gênero etc.
 * Atributos – Tabela com nome, descrição, tipo, unidade de medida (se aplicável) e exemplos de valores.
-* Qualidade dos dados – Presença de valores faltantes, inconsistências, duplicatas ou outliers.
 
-**Dica:** Seja objetivo, mas inclua detalhes suficientes para que outra pessoa possa entender e reutilizar o conjunto de dados sem buscar informações extras.
 
 # Canvas analítico
 
