@@ -289,7 +289,9 @@ Nesta seção, apresentamos o **Software Analytics Canvas**, que estrutura a org
 
 # Vídeo de apresentação da Etapa 01
 
-[vídeo de apresentação](https://drive.google.com/file/d/1MdpGhjmHqfL_GTlck8-xSFraGyga18W5/view)
+O vídeo a seguir apresenta os principais tópicos desenvolvidos nesta etapa, incluindo a contextualização do problema, o estado da arte, a descrição do dataset e o canvas analítico do projeto.
+
+▶ [Assistir ao vídeo de apresentação](https://drive.google.com/file/d/1MdpGhjmHqfL_GTlck8-xSFraGyga18W5/view)
 
 # Referências
 
