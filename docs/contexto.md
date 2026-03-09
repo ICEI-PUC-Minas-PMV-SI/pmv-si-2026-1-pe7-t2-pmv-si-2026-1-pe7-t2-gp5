@@ -299,7 +299,7 @@ AGRAWAL, Renuka; KHANNA, Aryan; HAMDARE, Safa. Analyzing and rewarding credit ca
 
 GAO, Jing; SUN, Wenjun; SUI, Xin. Research on default prediction for credit card users based on XGBoost-LSTM model. Discrete Dynamics in Nature and Society, [s. l.], v. 2021, p. 1-13, 2021. Disponível em: <https://doi.org/10.1155/2021/5080472>. Acesso em: 7 mar. 2026.
 
-LI, Ying; YAN, Keyue. Prediction of bank credit customers churn based on machine learning and interpretability analysis. Data Science in Finance and Economics, v. 5, n. 1, p. 19–34, 2025. Disponível em: <https://doi.org/10.3934/DSFE.2025002>. Acesso em: 8 mar. 2026.
+LI, Ying; YAN, Keyue. Prediction of bank credit customers churn based on machine learning and interpretability analysis. Data Science in Finance and Economics, v. 5, n. 1, p. 19–34, 2025. Disponível em: <https://doi.org/10.3934/DSFE.2025002>. Acesso em: 6 mar. 2026.
 
 TOSTA, Pedro Lucas Maranini; DIAS, Jonatas Cerqueira. Detecção de fraudes em transações bancárias utilizando inteligência artificial. Revista Processando o Saber, [s. l.], v. 17, n. 1, p. 21-37, 2025. Disponível em: <https://www.fatecpg.edu.br/revista/index.php/ps/article/view/341>. Acesso em: 7 mar. 2026. DOI: <https://doi.org/10.5281/zenodo.15477217>.
 
