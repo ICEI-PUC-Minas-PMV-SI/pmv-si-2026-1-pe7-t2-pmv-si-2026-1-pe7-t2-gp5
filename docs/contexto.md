@@ -254,7 +254,6 @@ Utilizaremos para o projeto o data set abaixo disponibilizado pelo Kaggle:
 * "Predicting Credit Card Customer Segmentation", https://www.kaggle.com/datasets/thedevastator/predicting-credit-card-customer-attrition-with-m, licença pública de uso.
 * O dataframe do projeto possui 10127 linhas e 23 colunas com diversos dados sobre a utilização do cartão de créditos. 
 * Entre os atributos existentes contém por exemplo nível educacional, idade, categoria do cartão, nível salarial, limite de crédito, situação matrimonial, média de compra, quantidade de dependente, idade do consumidor, gênero etc.
-* Atributos – Tabela com nome, descrição, tipo, unidade de medida (se aplicável) e exemplos de valores.
 
 ## Estrutura do Dateset
 | Coluna | Tipo de Dado | Descrição |
