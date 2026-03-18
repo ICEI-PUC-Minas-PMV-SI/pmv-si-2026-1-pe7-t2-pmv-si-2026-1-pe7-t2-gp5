@@ -44,7 +44,7 @@ No setor bancário e financeiro, esse avanço ganha ainda mais relevância diant
 
 O conjunto de dados selecionado para este projeto reúne informações sobre clientes de cartão de crédito, incluindo variáveis demográficas, limites de crédito, histórico de transações e indicadores de relacionamento com a instituição. Tais atributos oferecem condições adequadas para explorar técnicas de análise exploratória, segmentação e modelagem, permitindo investigar como diferentes variáveis se associam e contribuem para a formação de perfis distintos de clientes.
 
-Além disso, esta pesquisa apresenta relevância acadêmica e prática. Do ponto de vista acadêmico, contribui para o debate sobre aplicações de IA e aprendizado de máquina em problemas de negócio, especialmente no contexto de Sistemas de Informação e Ciência de Dados. Do ponto de vista prático, pode gerar insights úteis para o setor financeiro, auxiliando na compreensão do comportamento dos clientes e no desenvolvimento de estratégias orientadas por dados. Dessa forma, o estudo se justifica por articular fundamentos teóricos recentes com uma aplicação analítica concreta em um problema real e atual.
+Além disso, esta pesquisa apresenta relevância acadêmica e prática. Do ponto de vista acadêmico, contribui para o debate sobre aplicações de IA e aprendizado de máquina em problemas de negócio, especialmente no contexto de Sistemas de Informação e Ciência de Dados. Do ponto de vista prático, pode gerar insights úteis para o setor financeiro, auxiliando na compreensão do comportamento, retensão e desenvolvimentos de novos produtos para os clientes. Dessa forma, o estudo se justifica por articular fundamentos teóricos recentes com uma aplicação analítica concreta em um problema real e atual.
 
 ## Público-alvo
 
