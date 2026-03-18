@@ -28,7 +28,6 @@ Explorar e aplicar modelos de aprendizado de máquina para identificar padrões 
 
 ### Objetivos específicos
 
-- Realizar uma análise exploratória do conjunto de dados, identificando características, padrões e possíveis inconsistências nos dados disponíveis.
 - Investigar diferentes abordagens de aprendizado de máquina que possam ser aplicadas para segmentação ou classificação de clientes com base em seus atributos.
 - Comparar o desempenho de diferentes técnicas de modelagem para compreender quais abordagens apresentam melhores resultados no contexto do problema analisado.
 - Relacionar os resultados obtidos à literatura sobre uso da IA em processos decisórios organizacionais e em análises no setor financeiro.
