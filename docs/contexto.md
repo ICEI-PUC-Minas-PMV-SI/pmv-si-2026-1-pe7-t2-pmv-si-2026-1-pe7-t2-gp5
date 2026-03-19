@@ -255,31 +255,33 @@ Utilizaremos para o projeto o data set abaixo disponibilizado pelo Kaggle:
 * O dataframe do projeto possui 10127 linhas e 23 colunas com diversos dados sobre a utilização do cartão de créditos. 
 * Entre os atributos existentes contém por exemplo nível educacional, idade, categoria do cartão, nível salarial, limite de crédito, situação matrimonial, média de compra, quantidade de dependente, idade do consumidor, gênero etc.
 
-## Estrutura do Dateset
-| Coluna | Tipo de Dado | Descrição |
-|---|---|--|
-| CLIENTNUM | Inteiro |  Identificador único para cada cliente. |
-| Attrition_Flag | Booleano | Indicador que mostra se o cliente cancelou o serviço ou não. |
-| Customer_Age | Inteiro | Idade do cliente. |
-| Gender | Texto | Sexo do cliente. |
-| Dependent_count | Inteiro | Número de dependentes que o cliente possui. |
-| Education_Level | Texto | Nível de escolaridade do cliente. |
-| Marital_Status | Texto | Estado civil do cliente. |
-| Income_Category | Texto | Categoria de renda do cliente. |
-| Card_Category | Texto | Tipo de cartão que o cliente possui. |
-| Months_on_book | Inteiro | Há quanto tempo o cliente está cadastrado. |
-| Total_Relationship_Count | Inteiro | Número total de relacionamentos que o cliente possui com a operadora do cartão de crédito. |
-| Months_Inactive_12_mon | Inteiro | Número de meses em que o cliente esteve inativo nos últimos doze meses. |
-| Contacts_Count_12_mon | Inteiro | Número de contatos que o cliente teve nos últimos doze meses. |
-| Credit_Limit | Inteiro | Limite de crédito do cliente. |
-| Total_Revolving_Bal | Inteiro | Saldo rotativo total do cliente. |
-| Avg_Open_To_Buy | Inteiro | Proporção média de abertura de capital em relação à compra por cliente. |
-| Total_Amt_Chng_Q4_Q1 | Inteiro | Variação total do quarto trimestre para o primeiro trimestre. |
-| Total_Trans_Amt | Inteiro | Valor total da transação. |
-| Total_Trans_Ct | Inteiro | Número total de transações. |
-| Total_Ct_Chng_Q4_Q1 | Inteiro | Variação total do quarto trimestre para o primeiro trimestre |
-| Avg_Utilization_Ratio | Inteiro | Taxa média de utilização do cliente. |
-| Naive_Bayes_Classifier | Inteiro | Classificador Naive Bayes para prever se um cliente irá cancelar sua assinatura |
+## Estrutura do Dataset
+| Coluna | Tipo logico (analise) | Descricao | Exemplo de dado | Valor minimo | Valor medio | Valor maximo |
+|---|---|---|---|---|---|---|
+| CLIENTNUM | int | Identificador unico de cada cliente. | 768805383 | N/A | N/A  | N/A  |
+| Attrition_Flag | categorica/texto | Status de churn do cliente. | Existing Customer | N/A | N/A | N/A |
+| Customer_Age | int | Idade do cliente. | 45 | 26,00 | 46,33 | 73,00 |
+| Gender | categorica/texto | Genero do cliente. | M | N/A | N/A | N/A |
+| Dependent_count | int | Quantidade de dependentes. | 3 | 0,00 | 2,35 | 5,00 |
+| Education_Level | categorica/texto | Nivel de escolaridade. | High School | N/A | N/A | N/A |
+| Marital_Status | categorica/texto | Estado civil. | Married | N/A | N/A | N/A |
+| Income_Category | categorica/texto | Faixa de renda. | $60K - $80K | N/A | N/A | N/A |
+| Card_Category | categorica/texto | Categoria do cartao. | Blue | N/A | N/A | N/A |
+| Months_on_book | int | Tempo de relacionamento do cliente (em meses). | 39 | 13,00 | 35,93 | 56,00 |
+| Total_Relationship_Count | int | Quantidade total de produtos/relacionamentos com o banco. | 5 | 1,00 | 3,81 | 6,00 |
+| Months_Inactive_12_mon | int | Meses de inatividade nos ultimos 12 meses. | 1 | 0,00 | 2,34 | 6,00 |
+| Contacts_Count_12_mon | int | Quantidade de contatos com o banco nos ultimos 12 meses. | 3 | 0,00 | 2,46 | 6,00 |
+| Credit_Limit | float | Limite total de credito do cliente. | 12691 | 1.438,30 | 8.631,95 | 34.516,00 |
+| Total_Revolving_Bal | int | Saldo rotativo total utilizado. | 777 | 0,00 | 1.162,81 | 2.517,00 |
+| Avg_Open_To_Buy | float | Limite medio disponivel para compras (Credit_Limit - Total_Revolving_Bal). | 11914 | 3,00 | 7.469,14 | 34.516,00 |
+| Total_Amt_Chng_Q4_Q1 | float | Variacao do valor transacionado entre Q4 e Q1. | 1.335 | 0,00 | 0,76 | 3,40 |
+| Total_Trans_Amt | int | Valor total transacionado. | 1144 | 510,00 | 4.404,09 | 18.484,00 |
+| Total_Trans_Ct | int | Quantidade total de transacoes. | 42 | 10,00 | 64,86 | 139,00 |
+| Total_Ct_Chng_Q4_Q1 | float | Variacao da quantidade de transacoes entre Q4 e Q1. | 1.625 | 0,00 | 0,71 | 3,71 |
+| Avg_Utilization_Ratio | float | Taxa media de utilizacao do limite de credito. | 0.061 | 0,00 | 0,27 | 1,00 |
+| Naive_Bayes_Classifier | float | Score/probabilidade auxiliar da versao 1 do classificador Naive Bayes. | 9.3448e-05 | 0,00 | 0,16 | 1,00 |
+| Naive_Bayes_Classifier2 | float | Score/probabilidade auxiliar da versao 2 do classificador Naive Bayes. | 0.99991 | 0,00 | 0,84 | 1,00 |
+
 
 # Canvas analítico
 
