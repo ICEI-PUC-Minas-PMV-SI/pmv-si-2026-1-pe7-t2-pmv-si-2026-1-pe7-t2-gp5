@@ -218,6 +218,10 @@ O estudo avaliou o resultado com a abordagem tradicional de recompensa utilizado
 
 O estudo buscou responder quais são os mais relevantes preditores para Churn nas transações com cartões de crédito.
 
+### Relação com o presente trabalho
+
+O estudo de Al-Najjar et al. (2022) apresenta grande proximidade com este projeto, pois também aborda a previsão de churn em clientes de cartão de crédito por meio de algoritmos supervisionados. Assim como no referido trabalho, este estudo utiliza técnicas de aprendizado de máquina para identificar padrões associados ao abandono de clientes e avaliar o desempenho dos modelos com métricas como precisão, recall e F1-score. Como diferencial, este projeto utiliza um dataset específico que inclui a variável Attrition_Flag, permitindo analisar de forma direta o comportamento de clientes ativos e cancelados e explorar, de maneira mais aplicada, os fatores relacionados ao churn.
+
 ## Estudo 5 – Li e Yan (2025)
 
 ### Problema e contexto
@@ -250,6 +254,10 @@ O modelo XGBoost atingiu 97% em todas essas métricas, demonstrando alto poder p
 ### Resultados e conclusões
 
 Os resultados indicaram que as variáveis mais relevantes para a predição do churn foram a frequência de transações, o volume total transacionado e o número de produtos financeiros do cliente. Os autores concluem que a combinação entre modelos preditivos de alta performance e técnicas de interpretabilidade representa um avanço significativo para o setor bancário, pois permite não apenas antecipar o abandono, mas também compreender suas causas e orientar estratégias de retenção de forma mais precisa e personalizada.
+
+### Relação com o presente trabalho
+
+O estudo de Li e Yan (2025) apresenta uma forte convergência com este projeto ao combinar a predição de churn com a análise da interpretabilidade dos modelos. De forma semelhante, este trabalho utiliza aprendizado de máquina supervisionado, tendo a variável Attrition_Flag como base para prever o cancelamento de clientes e compreender quais fatores mais influenciam esse comportamento. Além da predição, a análise da importância das variáveis também se mostra relevante neste contexto, contribuindo para uma compreensão mais aprofundada dos fatores associados ao churn e para a geração de insights aplicáveis ao setor financeiro.
 
 ## Síntese crítica do estado da arte
 
