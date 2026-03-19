@@ -40,9 +40,9 @@ A análise do comportamento de clientes no setor financeiro é um tema de elevad
 
 Com o crescimento do volume de dados disponíveis nas organizações, técnicas de ciência de dados e aprendizado de máquina passaram a ocupar papel central na transformação desses dados em conhecimento útil para a tomada de decisão. Yu et al. (2024) demonstram que a IA vem sendo utilizada em diferentes áreas funcionais das organizações, com destaque para operações e marketing, sobretudo como mecanismo de suporte a decisões em ambientes complexos e intensivos em dados. Esse panorama reforça a importância de estudar aplicações concretas da IA em cenários organizacionais e setoriais específicos.
 
-No setor bancário e financeiro, esse avanço ganha ainda mais relevância diante da necessidade de processar grandes quantidades de informações em tempo real e identificar padrões que nem sempre são perceptíveis por métodos tradicionais. Tosta e Dias (2025) evidenciam que técnicas de IA, especialmente aprendizado de máquina e redes neurais, vêm sendo utilizadas para detectar padrões suspeitos e prevenir fraudes em transações bancárias. Embora o foco do referido estudo esteja na segurança financeira, sua contribuição teórica é importante para este projeto, pois demonstra como a IA pode extrair valor analítico de dados transacionais complexos. Essa mesma lógica pode ser aplicada à identificação de perfis de clientes, deslocando o foco da detecção de anomalias para a compreensão de padrões de comportamento e, neste projeto, tentar prever um possível cancelamento do cartão pelos clientes.
+No setor bancário e financeiro, esse avanço ganha ainda mais relevância diante da necessidade de processar grandes quantidades de informações em tempo real e identificar padrões que nem sempre são perceptíveis por métodos tradicionais. Tosta e Dias (2025) evidenciam que técnicas de IA, especialmente aprendizado de máquina e redes neurais, vêm sendo utilizadas para detectar padrões suspeitos e prevenir fraudes em transações bancárias. Embora o foco do referido estudo esteja na segurança financeira, sua contribuição teórica é importante para este projeto, pois demonstra como a IA pode extrair valor analítico de dados transacionais complexos. Essa mesma lógica pode ser aplicada à identificação de perfis de clientes, deslocando o foco da detecção de anomalias para a compreensão de padrões de comportamento.
 
-O conjunto de dados selecionado para este projeto reúne informações sobre clientes de cartão de crédito, incluindo variáveis demográficas, limites de crédito, histórico de transações e indicadores de relacionamento com a instituição. Tais atributos oferecem condições adequadas para explorar técnicas de análise exploratória, segmentação e modelagem, permitindo investigar como diferentes variáveis se associam e contribuem para a previsão de cancelamento do cartão.
+O conjunto de dados selecionado para este projeto reúne informações sobre clientes de cartão de crédito, incluindo variáveis demográficas, limites de crédito, histórico de transações e indicadores de relacionamento com a instituição. Tais atributos oferecem condições adequadas para explorar técnicas de análise exploratória, segmentação e modelagem, permitindo investigar como diferentes variáveis se associam e contribuem para a formação de perfis distintos de clientes.
 
 Além disso, esta pesquisa apresenta relevância acadêmica e prática. Do ponto de vista acadêmico, contribui para o debate sobre aplicações de IA e aprendizado de máquina em problemas de negócio, especialmente no contexto de Sistemas de Informação e Ciência de Dados. Do ponto de vista prático, pode gerar insights úteis para o setor financeiro, auxiliando na compreensão do comportamento, retensão e desenvolvimentos de novos produtos para os clientes. Dessa forma, o estudo se justifica por articular fundamentos teóricos recentes com uma aplicação analítica concreta em um problema real e atual.
 
@@ -104,6 +104,10 @@ Além disso, o estudo identificou dois padrões principais de utilização da IA
 
 Os autores concluem que a IA tem ampliado principalmente a eficiência de decisões operacionais, criando novas possibilidades de automação e apoio à gestão organizacional. Contudo, destacam limitações relacionadas ao tamanho da amostra e à natureza exploratória do estudo, sugerindo a ampliação futura do mapeamento de aplicações de IA.
 
+### Relevância para o projeto
+
+O estudo de Yu et al. (2024) contribui para este trabalho ao destacar o papel da Inteligência Artificial como suporte à tomada de decisão nas organizações. Seguindo essa perspectiva, este projeto utiliza técnicas de aprendizado de máquina supervisionado para analisar o comportamento de clientes de cartão de crédito, tendo a variável Attrition_Flag como referência para identificar o churn. Por meio de etapas como análise exploratória dos dados (EDA), seleção de variáveis relevantes e construção de modelos preditivos, busca-se compreender melhor os padrões de cancelamento e gerar insights que possam auxiliar estratégias de retenção no setor financeiro.
+
 ## Estudo 2 – Tosta e Dias (2025)
 
 ### Problema e contexto
@@ -144,6 +148,10 @@ Esses indicadores são apontados como fundamentais para equilibrar a detecção 
 
 Os resultados discutidos pelos autores reforçam que a IA tem papel central na modernização dos mecanismos de segurança no setor bancário, especialmente pela capacidade de analisar grandes volumes de dados e reconhecer padrões complexos e sutis. O estudo conclui que métodos baseados em aprendizado de máquina e redes neurais tendem a ser mais eficazes que abordagens tradicionais, tanto para identificar atividades suspeitas quanto para prevenir incidentes semelhantes a fraudes históricas já registradas. Os autores também destacam que a IA deve ser entendida como ferramenta complementar às práticas de governança e segurança existentes.
 
+### Relevância para o projeto
+
+O trabalho de Tosta e Dias (2025) evidencia como a Inteligência Artificial pode ser utilizada para identificar padrões em grandes volumes de dados financeiros, especialmente na detecção de fraudes. Essa capacidade também está presente neste projeto, que utiliza dados transacionais de clientes de cartão de crédito para analisar comportamentos relevantes. A principal diferença está no foco da análise: enquanto os autores buscam identificar anomalias, ou seja, comportamentos fora do padrão, este estudo volta-se para a compreensão de padrões de comportamento associados ao churn, utilizando a variável Attrition_Flag para distinguir clientes ativos daqueles que cancelaram o serviço.
+
 ## Estudo 3 – Renuka Agrawal, Aryan Khanna, Safa Hamdare (2025)
 
 ### Problema e contexto
@@ -173,6 +181,10 @@ O estudo avaliou o resultado com a abordagem tradicional de recompensa utilizado
 ### Resultados e conclusões
 
 Os estudos demonstraram que a análise de clusterização segregou com sucesso os comportamentos dos clientes em diferentes tipos de cartões e que por meio do algoritmo de ML demonstrou forte performace em predizer o comportamento dos clientes quando exposto as recompensas.
+
+### Relevância para o projeto
+
+O estudo de Agrawal et al. (2025) se aproxima bastante deste projeto ao utilizar técnicas de aprendizado de máquina para analisar o comportamento de clientes de cartão de crédito, com foco na identificação de diferentes perfis de consumo por meio de clusterização. De forma semelhante, este trabalho também busca compreender padrões comportamentais presentes na base de dados. A principal diferença está na abordagem adotada: enquanto os autores utilizam métodos não supervisionados para segmentação, este estudo utiliza uma abordagem supervisionada, na qual a variável Attrition_Flag permite classificar diretamente os clientes quanto ao risco de cancelamento, aliando a análise exploratória à predição de churn.
 
 ## Estudo 4 – Dana Al‑Najjar, Nadia Al‑Rousan, Hazem Al‑Najjar, (2022)
 
@@ -255,33 +267,31 @@ Utilizaremos para o projeto o data set abaixo disponibilizado pelo Kaggle:
 * O dataframe do projeto possui 10127 linhas e 23 colunas com diversos dados sobre a utilização do cartão de créditos. 
 * Entre os atributos existentes contém por exemplo nível educacional, idade, categoria do cartão, nível salarial, limite de crédito, situação matrimonial, média de compra, quantidade de dependente, idade do consumidor, gênero etc.
 
-## Estrutura do Dataset
-| Coluna | Tipo logico (analise) | Descricao | Exemplo de dado | Valor minimo | Valor medio | Valor maximo |
-|---|---|---|---|---|---|---|
-| CLIENTNUM | int | Identificador unico de cada cliente. | 768805383 | N/A | N/A  | N/A  |
-| Attrition_Flag | categorica/texto | Status de churn do cliente. | Existing Customer | N/A | N/A | N/A |
-| Customer_Age | int | Idade do cliente. | 45 | 26,00 | 46,33 | 73,00 |
-| Gender | categorica/texto | Genero do cliente. | M | N/A | N/A | N/A |
-| Dependent_count | int | Quantidade de dependentes. | 3 | 0,00 | 2,35 | 5,00 |
-| Education_Level | categorica/texto | Nivel de escolaridade. | High School | N/A | N/A | N/A |
-| Marital_Status | categorica/texto | Estado civil. | Married | N/A | N/A | N/A |
-| Income_Category | categorica/texto | Faixa de renda. | $60K - $80K | N/A | N/A | N/A |
-| Card_Category | categorica/texto | Categoria do cartao. | Blue | N/A | N/A | N/A |
-| Months_on_book | int | Tempo de relacionamento do cliente (em meses). | 39 | 13,00 | 35,93 | 56,00 |
-| Total_Relationship_Count | int | Quantidade total de produtos/relacionamentos com o banco. | 5 | 1,00 | 3,81 | 6,00 |
-| Months_Inactive_12_mon | int | Meses de inatividade nos ultimos 12 meses. | 1 | 0,00 | 2,34 | 6,00 |
-| Contacts_Count_12_mon | int | Quantidade de contatos com o banco nos ultimos 12 meses. | 3 | 0,00 | 2,46 | 6,00 |
-| Credit_Limit | float | Limite total de credito do cliente. | 12691 | 1.438,30 | 8.631,95 | 34.516,00 |
-| Total_Revolving_Bal | int | Saldo rotativo total utilizado. | 777 | 0,00 | 1.162,81 | 2.517,00 |
-| Avg_Open_To_Buy | float | Limite medio disponivel para compras (Credit_Limit - Total_Revolving_Bal). | 11914 | 3,00 | 7.469,14 | 34.516,00 |
-| Total_Amt_Chng_Q4_Q1 | float | Variacao do valor transacionado entre Q4 e Q1. | 1.335 | 0,00 | 0,76 | 3,40 |
-| Total_Trans_Amt | int | Valor total transacionado. | 1144 | 510,00 | 4.404,09 | 18.484,00 |
-| Total_Trans_Ct | int | Quantidade total de transacoes. | 42 | 10,00 | 64,86 | 139,00 |
-| Total_Ct_Chng_Q4_Q1 | float | Variacao da quantidade de transacoes entre Q4 e Q1. | 1.625 | 0,00 | 0,71 | 3,71 |
-| Avg_Utilization_Ratio | float | Taxa media de utilizacao do limite de credito. | 0.061 | 0,00 | 0,27 | 1,00 |
-| Naive_Bayes_Classifier | float | Score/probabilidade auxiliar da versao 1 do classificador Naive Bayes. | 9.3448e-05 | 0,00 | 0,16 | 1,00 |
-| Naive_Bayes_Classifier2 | float | Score/probabilidade auxiliar da versao 2 do classificador Naive Bayes. | 0.99991 | 0,00 | 0,84 | 1,00 |
-
+## Estrutura do Dateset
+| Coluna | Tipo de Dado | Descrição |
+|---|---|--|
+| CLIENTNUM | Inteiro |  Identificador único para cada cliente. |
+| Attrition_Flag | Booleano | Indicador que mostra se o cliente cancelou o serviço ou não. |
+| Customer_Age | Inteiro | Idade do cliente. |
+| Gender | Texto | Sexo do cliente. |
+| Dependent_count | Inteiro | Número de dependentes que o cliente possui. |
+| Education_Level | Texto | Nível de escolaridade do cliente. |
+| Marital_Status | Texto | Estado civil do cliente. |
+| Income_Category | Texto | Categoria de renda do cliente. |
+| Card_Category | Texto | Tipo de cartão que o cliente possui. |
+| Months_on_book | Inteiro | Há quanto tempo o cliente está cadastrado. |
+| Total_Relationship_Count | Inteiro | Número total de relacionamentos que o cliente possui com a operadora do cartão de crédito. |
+| Months_Inactive_12_mon | Inteiro | Número de meses em que o cliente esteve inativo nos últimos doze meses. |
+| Contacts_Count_12_mon | Inteiro | Número de contatos que o cliente teve nos últimos doze meses. |
+| Credit_Limit | Inteiro | Limite de crédito do cliente. |
+| Total_Revolving_Bal | Inteiro | Saldo rotativo total do cliente. |
+| Avg_Open_To_Buy | Inteiro | Proporção média de abertura de capital em relação à compra por cliente. |
+| Total_Amt_Chng_Q4_Q1 | Inteiro | Variação total do quarto trimestre para o primeiro trimestre. |
+| Total_Trans_Amt | Inteiro | Valor total da transação. |
+| Total_Trans_Ct | Inteiro | Número total de transações. |
+| Total_Ct_Chng_Q4_Q1 | Inteiro | Variação total do quarto trimestre para o primeiro trimestre |
+| Avg_Utilization_Ratio | Inteiro | Taxa média de utilização do cliente. |
+| Naive_Bayes_Classifier | Inteiro | Classificador Naive Bayes para prever se um cliente irá cancelar sua assinatura |
 
 # Canvas analítico
 
