@@ -24,7 +24,7 @@ De que forma técnicas de aprendizado de máquina podem ser utilizadas para iden
 
 ## Objetivos preliminares
 
-Explorar e aplicar modelos de aprendizado de máquina para identificar padrões e segmentar clientes de cartão de crédito com base nas características presentes no conjunto de dados selecionado.
+Analisar e prever o cancelamento de clientes de cartão de crédito por meio de técnicas de aprendizado de máquina, identificando padrões comportamentais e fatores associados ao churn, com o objetivo de gerar insights que apoiem estratégias de retenção no setor financeiro.
 
 ### Objetivos específicos
 
