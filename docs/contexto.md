@@ -28,10 +28,11 @@ Explorar e aplicar modelos de aprendizado de máquina para identificar padrões 
 
 ### Objetivos específicos
 
-- Investigar diferentes abordagens de aprendizado de máquina que possam ser aplicadas para segmentação ou classificação de clientes com base em seus atributos.
-- Comparar o desempenho de diferentes técnicas de modelagem para compreender quais abordagens apresentam melhores resultados no contexto do problema analisado.
-- Relacionar os resultados obtidos à literatura sobre uso da IA em processos decisórios organizacionais e em análises no setor financeiro.
-- Avaliar de que forma os padrões identificados podem contribuir para a compreensão do comportamento de clientes e para a geração de insights estratégicos.
+- Realizar a análise exploratória dos dados (EDA) com foco na variável Attrition_Flag, identificando diferenças de comportamento entre clientes que cancelaram e os que permaneceram ativos.
+- Identificar e analisar variáveis relevantes associadas ao cancelamento, como frequência de uso, valor transacionado, limite de crédito, tempo de relacionamento e nível de inatividade.
+- Aplicar modelos de aprendizado de máquina supervisionado para prever o cancelamento de clientes, utilizando o Attrition_Flag como variável alvo.
+- Analisar a importância das variáveis e interpretar os resultados do modelo, identificando quais fatores mais influenciam o cancelamento do cartão de crédito.
+- Identificar padrões comportamentais associados ao churn e discutir como esses achados podem contribuir para estratégias de retenção e tomada de decisão no setor financeiro.
 
 ## Justificativa
 
