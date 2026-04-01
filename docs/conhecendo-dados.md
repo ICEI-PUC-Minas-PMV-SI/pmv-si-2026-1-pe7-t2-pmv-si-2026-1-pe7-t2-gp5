@@ -32,7 +32,7 @@ A variável-alvo `Attrition_Flag` apresenta um claro desbalanceamento: a grande 
 
 **Faixa de renda:** A categoria *Less than $40K* é a mais frequente nos dois grupos. A proporção entre as faixas de renda permanece relativamente estável entre ativos e desistentes, indicando que a renda declarada não é, sozinha, um preditor forte de cancelamento.
 
-![Renda por classe](img/Gráfico-Renda-Por-Classe.png)
+![Renda por classe](img/Grafico-Renda-Por-Classe.png)
 
 ### Variáveis comportamentais — principais diferenciadores
 
@@ -46,13 +46,13 @@ As variáveis que mais revelaram diferenças entre os grupos foram aquelas relac
 
 **Inatividade nos últimos 12 meses (`Months_Inactive_12_mon`):** O boxplot revela que clientes desistentes tendem a apresentar mais meses de inatividade do que os ativos. A mediana do grupo desistente é ligeiramente superior, e a dispersão indica que períodos prolongados sem uso do cartão estão correlacionados com maior probabilidade de churn.
 
-![Inatividade dos clientes por grupo](img/Gráfico-Inatividade-Dos-Clientes-Por-Gr....png)
+![Inatividade dos clientes por grupo](img/Gráfico-Inatividade-Dos-Clientes-Por-Grupo.png)
 
 ### Taxa de churn por categoria de cartão
 
 A análise da taxa de cancelamento por tipo de cartão (*Blue*, *Silver*, *Gold*, *Platinum*) mostra que a proporção de churn é relativamente similar entre as categorias. O cartão *Blue*, por ser o mais popular, concentra o maior volume absoluto tanto de ativos quanto de desistentes. Essa uniformidade indica que a categoria do cartão não é, por si só, um fator determinante para o cancelamento.
 
-![Taxa de desistência por tipo de cartão](img/Gráfico-Taxa-De-Desistencia-Por-Tipo-D....png)
+![Taxa de desistência por tipo de cartão](img/Gráfico-Taxa-De-Desistencia-Por-Tipo-De-Cartão-De-Crédito.png)
 
 ### Síntese dos achados
 
