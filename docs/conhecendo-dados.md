@@ -22,7 +22,7 @@ A variável-alvo `Attrition_Flag` apresenta um claro desbalanceamento: a grande 
 
 ![Nível de educação por classe](img/Grafico-Nivel-Educacao.png)
 
-**Faixa etária:** A distribuição de idades segue um padrão próximo da normal em ambos os grupos, com concentração entre 40 e 55 anos. Não foram observadas diferenças significativas na centralidade ou dispersão das idades entre clientes ativos e desistentes, sugerindo que a idade por si só não é determinante para o churn.
+**Faixa etária:** A distribuição de idades segue um padrão próximo da normal em ambos os grupos, com concentração entre 40 e 55 anos. A inspeção visual dos histogramas não revelou separação expressiva entre as distribuições de idade dos dois grupos, ambas concentradas entre 40 e 55 anos, com medianas próximas. Com base nessa análise descritiva, a idade não se destaca como variável diferenciadora, seu poder preditivo será avaliado na etapa de modelagem.
 
 ![Idade dos clientes por classe](img/Gráfico-Idade-Clientes-ativos.png)
 
@@ -44,7 +44,7 @@ As variáveis que mais revelaram diferenças entre os grupos foram aquelas relac
 
 ![Histograma de uso do cartão por grupo](img/Gráfico-Hisograma-Do-Uso-De-Cartão.png)
 
-**Inatividade nos últimos 12 meses (`Months_Inactive_12_mon`):** O boxplot revela que clientes desistentes tendem a apresentar mais meses de inatividade do que os ativos. A mediana do grupo desistente é ligeiramente superior, e a dispersão indica que períodos prolongados sem uso do cartão estão correlacionados com maior probabilidade de churn.
+**Inatividade nos últimos 12 meses (`Months_Inactive_12_mon`):** O boxplot revela que clientes desistentes tendem a apresentar mais meses de inatividade do que os ativos. A mediana de meses inativos dos clientes desistentes é de **3 meses**, contra **2 meses** dos clientes ativos. Descritivamente, observa-se que períodos mais longos sem uso do cartão estão associados a uma maior proporção de clientes que cancelaram o serviço.
 
 ![Inatividade dos clientes por grupo](img/Gráfico-Inatividade-Dos-Clientes-Por-Grupo.png)
 
@@ -61,7 +61,7 @@ Em resumo, os achados mais relevantes da análise exploratória são:
 - O dataset é **desbalanceado**, com predominância de clientes ativos, o que demandará técnicas de balanceamento na fase de modelagem.
 - **Variáveis demográficas** (idade, escolaridade, estado civil e renda) apresentaram distribuições proporcionalmente similares entre os dois grupos, sem diferenças marcantes que as qualifiquem como preditores isolados de churn.
 - As **variáveis comportamentais** se mostraram as mais discriminativas: clientes desistentes apresentam menor volume de transações e maior período de inatividade, configurando os sinais mais claros de propensão ao cancelamento.
-- A **categoria do cartão** não demonstrou influência significativa sobre a taxa de churn.
+- A **categoria do cartão** apresentou taxas de churn descritivamente similares entre as categorias analisadas (*Blue*, *Silver*, *Gold*, *Platinum*), sem diferença expressiva observada na inspeção visual das proporções.
 
 Esses achados reforçam a importância de monitorar o **engajamento transacional** dos clientes como estratégia de prevenção ao cancelamento.
 
