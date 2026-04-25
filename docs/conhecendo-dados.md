@@ -22,7 +22,7 @@ A variável-alvo `Attrition_Flag` apresenta um claro desbalanceamento: a grande 
 
 ![Nível de educação por classe](img/Grafico-Nivel-Educacao.png)
 
-**Faixa etária:** A distribuição de idades segue um padrão próximo da normal em ambos os grupos, com concentração entre 40 e 55 anos. A inspeção visual dos histogramas não revelou separação expressiva entre as distribuições de idade dos dois grupos, ambas concentradas entre 40 e 55 anos, com medianas próximas. Com base nessa análise descritiva, a idade não se destaca como variável diferenciadora, seu poder preditivo será avaliado na etapa de modelagem.
+**Faixa etária:** A inspeção visual dos histogramas não revelou separação expressiva entre as distribuições de idade dos dois grupos, ambas concentradas entre 40 e 55 anos, com medianas próximas. Com base nessa análise descritiva, a idade não se destaca como variável diferenciadora — seu poder preditivo será avaliado na etapa de modelagem.
 
 ![Idade dos clientes por classe](img/Gráfico-Idade-Clientes-ativos.png)
 
@@ -38,7 +38,7 @@ A variável-alvo `Attrition_Flag` apresenta um claro desbalanceamento: a grande 
 
 As variáveis que mais revelaram diferenças entre os grupos foram aquelas relacionadas ao **comportamento transacional** dos clientes:
 
-**Volume de transações (`Total_Trans_Ct`):** O boxplot e o histograma mostram uma separação clara entre os grupos. Clientes ativos apresentam uma mediana de transações consideravelmente maior do que os desistentes. No histograma, observa-se que a distribuição dos desistentes concentra-se em faixas mais baixas de transações, enquanto os ativos se distribuem por faixas mais altas. Isso sugere que a **queda no uso do cartão é um dos sinais mais fortes de propensão ao cancelamento**.
+**Volume de transações (`Total_Trans_Ct`):** O boxplot e o histograma mostram uma separação clara entre os grupos. Clientes ativos apresentam mediana de **70 transações**, enquanto os desistentes registram mediana de **43 transações**. No histograma, observa-se que a distribuição dos desistentes concentra-se em faixas mais baixas de transações, enquanto os ativos se distribuem por faixas mais altas. Isso sugere que a **queda no uso do cartão é um dos sinais mais fortes de propensão ao cancelamento**.
 
 ![Total de transações por classe](img/Grafico-Total-de-Transação-Por-Classe.png)
 
@@ -50,7 +50,7 @@ As variáveis que mais revelaram diferenças entre os grupos foram aquelas relac
 
 ### Taxa de churn por categoria de cartão
 
-A análise da taxa de cancelamento por tipo de cartão (*Blue*, *Silver*, *Gold*, *Platinum*) mostra que a proporção de churn é relativamente similar entre as categorias. O cartão *Blue*, por ser o mais popular, concentra o maior volume absoluto tanto de ativos quanto de desistentes. Essa uniformidade indica que a categoria do cartão não é, por si só, um fator determinante para o cancelamento.
+A análise da taxa de cancelamento por tipo de cartão (*Blue*, *Silver*, *Gold*, *Platinum*) mostra que a proporção de churn é relativamente similar entre as categorias. O cartão *Blue*, por ser o mais popular, concentra o maior volume absoluto tanto de ativos quanto de desistentes. Essa uniformidade sugere, descritivamente, que a categoria do cartão não apresenta diferença expressiva nas proporções de churn entre os grupos analisados.
 
 ![Taxa de desistência por tipo de cartão](img/Gráfico-Taxa-De-Desistencia-Por-Tipo-De-Cartão-De-Crédito.png)
 
@@ -60,7 +60,7 @@ Em resumo, os achados mais relevantes da análise exploratória são:
 
 - O dataset é **desbalanceado**, com predominância de clientes ativos, o que demandará técnicas de balanceamento na fase de modelagem.
 - **Variáveis demográficas** (idade, escolaridade, estado civil e renda) apresentaram distribuições proporcionalmente similares entre os dois grupos, sem diferenças marcantes que as qualifiquem como preditores isolados de churn.
-- As **variáveis comportamentais** se mostraram as mais discriminativas: clientes desistentes apresentam menor volume de transações e maior período de inatividade, configurando os sinais mais claros de propensão ao cancelamento.
+- As **variáveis comportamentais** se mostraram as mais discriminativas: clientes desistentes apresentam mediana de **43 transações** contra **70 dos clientes ativos**, e mediana de **3 meses de inatividade** contra **2 meses**, configurando os sinais mais claros de propensão ao cancelamento.
 - A **categoria do cartão** apresentou taxas de churn descritivamente similares entre as categorias analisadas (*Blue*, *Silver*, *Gold*, *Platinum*), sem diferença expressiva observada na inspeção visual das proporções.
 
 Esses achados reforçam a importância de monitorar o **engajamento transacional** dos clientes como estratégia de prevenção ao cancelamento.
