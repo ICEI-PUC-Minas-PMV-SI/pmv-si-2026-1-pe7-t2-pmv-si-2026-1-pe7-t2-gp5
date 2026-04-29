@@ -20,6 +20,9 @@ df_dataset.drop(columns=['CLIENTNUM'], inplace=True)
 
 A tabela abaixo resume as principais métricas das variáveis numéricas mais relevantes para a análise:
 
+<img width="1339" height="342" alt="Estatistica_IA" src="https://github.com/user-attachments/assets/567d9daf-d067-4045-8e8b-1137d9219052" />
+
+
 | Variável | Média | Desvio Padrão | Mínimo | Mediana (50%) | Máximo |
 |---|---|---|---|---|---|
 | `Customer_Age` | 46,35 | 8,04 | 26 | 46 | 73 |
