@@ -20,18 +20,7 @@ df_dataset.drop(columns=['CLIENTNUM'], inplace=True)
 
 A tabela abaixo resume as principais métricas das variáveis numéricas mais relevantes para a análise:
 
-<img width="1339" height="342" alt="Estatistica_IA" src="https://github.com/user-attachments/assets/567d9daf-d067-4045-8e8b-1137d9219052" />
-
-
-| Variável | Média | Desvio Padrão | Mínimo | Mediana (50%) | Máximo |
-|---|---|---|---|---|---|
-| `Customer_Age` | 46,35 | 8,04 | 26 | 46 | 73 |
-| `Total_Trans_Ct` | 64,50 | 23,81 | 10 | 67 | 134 |
-| `Months_Inactive_12_mon` | — | — | — | 2–3* | — |
-| `Credit_Limit` | 8.492,77 | 9.126,07 | 1.438,30 | 4.287,00 | 34.516,00 |
-| `Total_Trans_Amt` | 4.394,30 | 3.468,46 | 510 | 3.831 | 17.995 |
-
-*Mediana de 2 meses para clientes ativos e 3 meses para desistentes — detalhado na seção de variáveis comportamentais.*
+<img width="1336" height="345" alt="Estatistica_IA" src="https://github.com/user-attachments/assets/7c4c7d16-038a-4bbd-9126-4eac3effb7fe" />
 
 ### Desbalanceamento de classes
 
