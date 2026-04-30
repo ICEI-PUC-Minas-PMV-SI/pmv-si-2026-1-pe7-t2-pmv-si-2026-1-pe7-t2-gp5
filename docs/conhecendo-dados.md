@@ -110,3 +110,10 @@ O projeto foi desenvolvido inteiramente em **Python**, utilizando o ambiente **G
 - **Seaborn** — complemento ao Matplotlib para visualizações estatísticas com estilização aprimorada.
 - **NumPy** — suporte a operações numéricas e vetorizadas utilizadas internamente pelas demais bibliotecas.
 - **KaggleHub** — download automatizado do dataset diretamente da plataforma Kaggle, garantindo reprodutibilidade na coleta dos dados.
+
+## Projeto de IA e os limites da ética com respeito a LGPD
+
+O projeto que buscamos desenvolver aborda a investigação de dados financeiros e comportamentos de compra de cliente que incluem dados bastante sensíveis.
+Diante dessa iniciativa algumas questões éticas surgem como por exemplo: "Com que frequência devemos persistir com iniciativas de marketing depois de conhecer o comportamento frequente de compra dos clientes?", "Devemos forçar ofertas de compras em busca de atingimento de metas?" ou "Devemos direcionar os resultados da pesquisa somente no que for pertinente para a empresa que melhor nos paga?".
+
+Junto dessas questões éticas seguem as necessidades de conformidade do estudo com as leis, que no Brasil, é regida pela LGPD (Lei Geral de Proteção de Dados), na nossa iniciativa buscamos atender a todos os 10 princípios da LGPD com maior foco ao princípio da finalidade (realização do tratamento para propósitos legítimos, específicos, explícitos e informados ao titular, sem possibilidade de tratamento posterior de forma incompatível com essas finalidade.) e mantendo os dados anonimizados(dados impossíveis de reidentificar a pessoa).
