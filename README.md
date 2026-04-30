@@ -33,11 +33,15 @@ Por meio da utilização de métodos de ciência de dados e algoritmos de aprend
 | ETAPA 4         |[Preparação dos dados, construção, avaliação e comparação dos modelos propostos](docs/construindo-modelos.md) |
 | ETAPA 5         |[Implantação e apresentação da solução](docs/implantação-apresentacao.md) <br>  |
 
+
 ## Instruções de utilização
 
 Acesso em Produção (quando disponível)
 * URL: https://<seu-dominio>/...
 * Status: online/homologação
+
+# Colab
+https://colab.research.google.com/drive/121pJndHhc7jqSxwHJbIWy4_fCjM8Jpa6?usp=sharing
 
 # Código
 
