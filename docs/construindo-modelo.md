@@ -1,30 +1,63 @@
 # Preparação dos dados
 
-Nesta etapa, deverão ser descritas todas as técnicas utilizadas para pré-processamento/tratamento dos dados.
+Nesta etapa são descritas todas as técnicas utilizadas para o pré-processamento e tratamento dos dados, com base nas características do dataset *BankChurners.csv* e no objetivo de construir um modelo de previsão de churn.
 
-Algumas das etapas podem estar relacionadas à:
+## Remoção de colunas irrelevantes e com data leakage
 
-* Limpeza de Dados: trate valores ausentes: decida como lidar com dados faltantes, seja removendo linhas, preenchendo com médias, medianas ou usando métodos mais avançados; remova _outliers_: identifique e trate valores que se desviam significativamente da maioria dos dados.
+Antes da limpeza, foram removidas duas colunas que comprometeriam a qualidade do modelo:
 
-* Transformação de Dados: normalize/padronize: torne os dados comparáveis, normalizando ou padronizando os valores para uma escala específica; codifique variáveis categóricas: converta variáveis categóricas em uma forma numérica, usando técnicas como _one-hot encoding_.
+- **`CLIENTNUM`**: identificador único do cliente, sem valor preditivo.
+- **Colunas Naive Bayes** (`Naive_Bayes_Classifier_Attrition_Flag_*`): geradas a partir da variável-alvo, causariam vazamento de informação (*data leakage*) durante o treinamento.
 
-* _Feature Engineering_: crie novos atributos que possam ser mais informativos para o modelo; selecione características relevantes e descarte as menos importantes.
+## Limpeza de dados
 
-* Tratamento de dados desbalanceados: se as classes de interesse forem desbalanceadas, considere técnicas como _oversampling_, _undersampling_ ou o uso de algoritmos que lidam naturalmente com desbalanceamento.
+Registros com o valor `"Unknown"` nas colunas `Education_Level`, `Marital_Status` e `Income_Category` foram removidos, pois a imputação de categorias desconhecidas poderia introduzir ruído no modelo. Após essa limpeza, o dataset passou de 10.127 para **7.081 registros**, sem linhas duplicadas.
 
-* Separação de dados: divida os dados em conjuntos de treinamento, validação e teste para avaliar o desempenho do modelo de maneira adequada.
-  
-* Manuseio de Dados Temporais: se lidar com dados temporais, considere a ordenação adequada e técnicas específicas para esse tipo de dado.
-  
-* Redução de Dimensionalidade: aplique técnicas como PCA (Análise de Componentes Principais) se a dimensionalidade dos dados for muito alta.
+```python
+df_dataset = df_dataset[df_dataset != "Unknown"].dropna()
+df_dataset.drop(columns=['CLIENTNUM'], inplace=True)
+print(f"Número de registros: {df_dataset.shape[0]}")
+print(f"Número de colunas: {df_dataset.shape[1]}")
+print(f"Número de linhas duplicadas: {df_dataset.duplicated().sum()}")
+```
 
-* Validação Cruzada: utilize validação cruzada para avaliar o desempenho do modelo de forma mais robusta.
+## Tratamento de outliers
 
-* Monitoramento Contínuo: atualize e adapte o pré-processamento conforme necessário ao longo do tempo, especialmente se os dados ou as condições do problema mudarem.
+A detecção de outliers foi realizada com base na regra do Intervalo Interquartil (IQR). A decisão foi **manter os outliers** em todas as variáveis, pois eles representam comportamentos reais de clientes (altos limites de crédito, alto volume de transações, longos períodos de inatividade) que podem ser preditivos de churn. Sua reavaliação está prevista para etapas futuras de otimização do modelo, onde técnicas como *capping* ou transformações logarítmicas poderão ser aplicadas.
 
-* Entre outras....
+## Codificação de variáveis categóricas (One-Hot Encoding)
 
-Avalie quais etapas são importantes para o contexto dos dados que você está trabalhando, pois a qualidade dos dados e a eficácia do pré-processamento desempenham um papel fundamental no sucesso de modelo(s) de aprendizado de máquina. É importante entender o contexto do problema e ajustar as etapas de preparação de dados de acordo com as necessidades específicas de cada projeto.
+As variáveis categóricas (`Gender`, `Education_Level`, `Marital_Status`, `Income_Category`, `Card_Category`) foram convertidas para formato numérico utilizando `pd.get_dummies()` com `drop_first=True`, que elimina a primeira categoria de cada variável para evitar multicolinearidade.
+
+```python
+X_xgb = pd.get_dummies(X_xgb, drop_first=True)
+```
+
+## Criação da variável-alvo
+
+A variável-alvo `is_desistente` foi criada a partir de `Attrition_Flag`, mapeando `"Attrited Customer"` para `1` e `"Existing Customer"` para `0`.
+
+```python
+df_dataset["is_desistente"] = (df_dataset["Attrition_Flag"] == "Attrited Customer").astype(int)
+```
+
+## Tratamento do desbalanceamento de classes
+
+O dataset apresenta desbalanceamento: 84,3% de clientes ativos (5.968) contra 15,7% de desistentes (1.113). Para lidar com isso sem técnicas de reamostragem, utilizou-se o parâmetro `scale_pos_weight` do XGBoost, calculado como a razão entre o número de amostras da classe negativa e da classe positiva. Isso instrui o modelo a penalizar mais os erros na classe minoritária durante o treinamento.
+
+```python
+scale_pos_weight_val = sum(y_train_xgb == 0) / sum(y_train_xgb == 1)
+```
+
+## Separação em treino e teste
+
+Os dados foram divididos em 70% para treino e 30% para teste, com `stratify=y_xgb` para garantir que a proporção das classes fosse mantida em ambos os conjuntos, e `random_state=42` para reprodutibilidade.
+
+```python
+X_train_xgb, X_test_xgb, y_train_xgb, y_test_xgb = train_test_split(
+    X_xgb, y_xgb, test_size=0.3, random_state=42, stratify=y_xgb
+)
+```
 
 # Descrição do modelo
 
