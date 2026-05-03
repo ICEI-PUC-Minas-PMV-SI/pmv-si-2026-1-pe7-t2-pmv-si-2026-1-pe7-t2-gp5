@@ -1,7 +1,9 @@
 # Análise de Perfis de Clientes de Cartão de Crédito utilizando Técnicas de Inteligência Artificial
 
 `CURSO: Sistemas de Informação`
+
 `DISCIPLINA: Projeto - Pesquisa e Experimentação em Sistemas de Informação`
+
 `SEMESTRE: 7º`
 
 Este projeto aplica técnicas de ciência de dados e aprendizado de máquina para identificar padrões de comportamento entre clientes de cartão de crédito e prever o cancelamento do serviço (churn). A partir de variáveis relacionadas ao uso do cartão, perfil financeiro e histórico de relacionamento com a instituição, foi construído um modelo preditivo capaz de identificar clientes com maior risco de cancelamento, gerando insights que apoiam estratégias de retenção no setor financeiro.
