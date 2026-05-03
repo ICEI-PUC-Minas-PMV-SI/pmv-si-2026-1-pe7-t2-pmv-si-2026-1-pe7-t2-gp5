@@ -4,7 +4,7 @@ Nesta etapa são descritas todas as técnicas utilizadas para o pré-processamen
 
 ## Considerações éticas e LGPD
 
-O dataset utilizado neste projeto contém atributos de natureza pessoal, como `Gender`, `Customer_Age`, `Marital_Status`, `Education_Level` e `Income_Category`. De acordo com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), esses dados se enquadram como dados pessoais e, em alguns casos, como dados pessoais sensíveis, exigindo atenção ao seu tratamento.
+O dataset utilizado neste projeto contém atributos de natureza pessoal, como `Gender`, `Customer_Age`, `Marital_Status`, `Education_Level` e `Income_Category`. De acordo com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018), esses dados se enquadram como dados pessoais e, em alguns casos, como dados pessoais sensíveis, exigindo atenção ao seu tratamento.
 
 Para este projeto, o dataset foi obtido de fonte pública disponibilizada no Kaggle sob licença de uso público, sem identificação nominal dos titulares. O identificador `CLIENTNUM` foi removido antes de qualquer análise, eliminando a possibilidade de rastreamento individual dos clientes. Nenhum dado foi coletado diretamente de pessoas físicas, e os resultados são tratados de forma agregada, sem finalidade de perfilamento individual ou tomada de decisão automatizada sobre pessoas reais. Ainda assim, caso este modelo venha a ser aplicado em ambiente institucional com dados reais, será necessário observar as bases legais previstas na LGPD, garantir transparência ao titular e adotar medidas de segurança adequadas ao tratamento dos dados.
 
@@ -29,7 +29,7 @@ print(f"Número de linhas duplicadas: {df_dataset.duplicated().sum()}")
 
 ## Tratamento de outliers
 
-A detecção de outliers foi realizada com base na regra do Intervalo Interquartil (IQR). A decisão foi **manter os outliers** em todas as variáveis, pois eles representam comportamentos reais de clientes (altos limites de crédito, alto volume de transações, longos períodos de inatividade) que podem ser preditivos de churn. Sua reavaliação está prevista para etapas futuras de otimização do modelo, onde técnicas como *capping* ou transformações logarítmicas poderão ser aplicadas.
+A detecção de outliers foi realizada com base na regra do Intervalo Interquartil (IQR). A decisão foi **manter os outliers** em todas as variáveis, pois eles representam comportamentos reais de clientes, como altos limites de crédito, alto volume de transações e longos períodos de inatividade, que podem ser preditivos de churn. Sua reavaliação está prevista para etapas futuras de otimização do modelo, onde técnicas como *capping* ou transformações logarítmicas poderão ser aplicadas.
 
 ## Codificação de variáveis categóricas (One-Hot Encoding)
 
@@ -132,8 +132,8 @@ Para avaliar o desempenho do modelo foram utilizadas as seguintes métricas, tod
 
 - **F1-score**: métrica principal, escolhida por ser a média harmônica entre precisão e recall, equilibrando as duas medidas. Em datasets desbalanceados, é mais representativa que a acurácia isolada, pois avalia o desempenho especificamente na classe minoritária (`Attrited Customer`).
 - **Acurácia (Accuracy)**: proporção de previsões corretas sobre o total. Útil como visão geral, mas potencialmente enganosa em cenários desbalanceados.
-- **Precisão (Precision)**: de todos os clientes previstos como desistentes, quantos realmente cancelaram. Reflete o custo de ações de retenção desnecessárias (Falsos Positivos).
-- **Recall (Sensibilidade)**: de todos os clientes que realmente cancelaram, quantos o modelo identificou. Reflete o custo de não identificar um cliente em risco (Falsos Negativos) — o erro mais custoso no contexto de churn.
+- **Precisão (Precision)**: de todos os clientes previstos como desistentes, quantos realmente cancelaram. Reflete o custo de ações de retenção desnecessárias geradas pelos Falsos Positivos.
+- **Recall (Sensibilidade)**: de todos os clientes que realmente cancelaram, quantos o modelo identificou. Reflete o custo de não identificar um cliente em risco, representado pelos Falsos Negativos, que é o erro mais custoso no contexto de churn.
 
 ## Discussão dos resultados obtidos
 
@@ -146,11 +146,11 @@ O modelo XGBoost final, treinado com `n_estimators=500` e `scale_pos_weight` cal
 | Precisão (Attrited Customer) | 0.9137 |
 | Recall (Attrited Customer) | 0.9192 |
 
-O F1-score de **0.9164** para a classe minoritária demonstra que o modelo é eficaz em identificar clientes propensos ao cancelamento, mantendo bom equilíbrio entre precisão e recall. A precisão de **0.9137** indica que, quando o modelo sinaliza um cancelamento, está correto em mais de 91% das vezes, minimizando o esforço em ações de retenção desnecessárias. O recall de **0.9192** é particularmente relevante: significa que o modelo identifica mais de 91% dos clientes que realmente irão cancelar, permitindo intervenções antecipadas.
+O F1-score de **0.9164** para a classe minoritária demonstra que o modelo é eficaz em identificar clientes propensos ao cancelamento, mantendo bom equilíbrio entre precisão e recall. A precisão de **0.9137** indica que, quando o modelo sinaliza um cancelamento, está correto em mais de 91% das vezes, minimizando o esforço em ações de retenção desnecessárias. O recall de **0.9192** é particularmente relevante, pois significa que o modelo identifica mais de 91% dos clientes que realmente irão cancelar, permitindo intervenções antecipadas.
 
 ### Interpretação de negócio
 
-Os resultados obtidos têm implicações práticas diretas para instituições financeiras. O problema central identificado na Etapa 1 — a dificuldade em antecipar o cancelamento de clientes e os custos associados à perda de receita e à aquisição de novos usuários — é diretamente endereçado pelo modelo. Na prática, os **307 Verdadeiros Positivos** representam clientes que seriam corretamente sinalizados para ações de retenção, como ofertas personalizadas, contato proativo ou revisão de condições contratuais. Os **27 Falsos Negativos** representam clientes que cancelariam sem detecção prévia — um número expressivamente baixo, que indica que o modelo deixa passar menos de 9% dos casos de risco. Já os **29 Falsos Positivos** representam clientes ativos que receberiam esforços de retenção desnecessários, um custo operacional marginal diante do volume de cancelamentos corretamente identificados. Para gestores e analistas do setor financeiro — público-alvo definido na Etapa 1 — esse nível de desempenho viabiliza a implementação do modelo como ferramenta de apoio à decisão em estratégias de relacionamento e retenção de clientes.
+Os resultados obtidos têm implicações práticas diretas para instituições financeiras. O problema central identificado na Etapa 1, que trata da dificuldade em antecipar o cancelamento de clientes e dos custos associados à perda de receita e à aquisição de novos usuários, é diretamente endereçado pelo modelo. Na prática, os **307 Verdadeiros Positivos** representam clientes que seriam corretamente sinalizados para ações de retenção, como ofertas personalizadas, contato proativo ou revisão de condições contratuais. Os **27 Falsos Negativos** representam clientes que cancelariam sem detecção prévia, um número expressivamente baixo que indica que o modelo deixa passar menos de 9% dos casos de risco. Já os **29 Falsos Positivos** representam clientes ativos que receberiam esforços de retenção desnecessários, um custo operacional marginal diante do volume de cancelamentos corretamente identificados. Para gestores e analistas do setor financeiro, público-alvo definido na Etapa 1, esse nível de desempenho viabiliza a implementação do modelo como ferramenta de apoio à decisão em estratégias de relacionamento e retenção de clientes.
 
 ### Matriz de Confusão
 
@@ -172,7 +172,7 @@ Os resultados obtidos têm implicações práticas diretas para instituições f
 
 O pipeline seguiu um conjunto organizado e replicável de processos, desde a especificação do problema até a avaliação final do modelo:
 
-0. **Especificação do problema**: identificar padrões comportamentais em clientes de cartão de crédito que indicam risco de cancelamento, com base na questão de pesquisa definida na Etapa 1 — *"De que forma técnicas de aprendizado de máquina podem ser utilizadas para identificar padrões e realizar a segmentação de clientes de cartão de crédito com base em características demográficas, financeiras e comportamentais?"* — tendo `Attrition_Flag` como variável-alvo e F1-score como métrica principal de avaliação.
+0. **Especificação do problema**: identificar padrões comportamentais em clientes de cartão de crédito que indicam risco de cancelamento, com base na questão de pesquisa definida na Etapa 1: *"De que forma técnicas de aprendizado de máquina podem ser utilizadas para identificar padrões e realizar a segmentação de clientes de cartão de crédito com base em características demográficas, financeiras e comportamentais?"* O trabalho teve `Attrition_Flag` como variável-alvo e F1-score como métrica principal de avaliação.
 1. **Coleta dos dados**: dataset *BankChurners.csv* baixado do Kaggle via `kagglehub`, garantindo reprodutibilidade na coleta.
 2. **Análise exploratória (EDA)**: compreensão da estrutura, estatísticas descritivas numéricas e categóricas, visualização de distribuições e análise de outliers via IQR.
 3. **Remoção de colunas**: exclusão de `CLIENTNUM` (identificador sem valor preditivo) e das colunas Naive Bayes (causariam *data leakage*).
