@@ -2,6 +2,12 @@
 
 Nesta etapa são descritas todas as técnicas utilizadas para o pré-processamento e tratamento dos dados, com base nas características do dataset *BankChurners.csv* e no objetivo de construir um modelo de previsão de churn.
 
+## Considerações éticas e LGPD
+
+O dataset utilizado neste projeto contém atributos de natureza pessoal, como `Gender`, `Customer_Age`, `Marital_Status`, `Education_Level` e `Income_Category`. De acordo com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), esses dados se enquadram como dados pessoais e, em alguns casos, como dados pessoais sensíveis, exigindo atenção ao seu tratamento.
+
+Para este projeto, o dataset foi obtido de fonte pública disponibilizada no Kaggle sob licença de uso público, sem identificação nominal dos titulares. O identificador `CLIENTNUM` foi removido antes de qualquer análise, eliminando a possibilidade de rastreamento individual dos clientes. Nenhum dado foi coletado diretamente de pessoas físicas, e os resultados são tratados de forma agregada, sem finalidade de perfilamento individual ou tomada de decisão automatizada sobre pessoas reais. Ainda assim, caso este modelo venha a ser aplicado em ambiente institucional com dados reais, será necessário observar as bases legais previstas na LGPD, garantir transparência ao titular e adotar medidas de segurança adequadas ao tratamento dos dados.
+
 ## Remoção de colunas irrelevantes e com data leakage
 
 Antes da limpeza, foram removidas duas colunas que comprometeriam a qualidade do modelo:
@@ -89,7 +95,7 @@ O XGBoost é uma implementação otimizada de árvores de decisão em *gradient 
 
 ## Justificativa da escolha
 
-A escolha do XGBoost foi embasada em sua comprovada eficácia em problemas de previsão de churn em contextos financeiros e bancários, conforme demonstrado nos estudos de Al-Najjar et al. (2022) e Li e Yan (2025). Sua capacidade de lidar nativamente com desbalanceamento de classes via `scale_pos_weight` e sua eficiência computacional o tornam adequado ao contexto deste projeto.
+A escolha do XGBoost foi embasada em sua comprovada eficácia em problemas de previsão de churn em contextos financeiros e bancários. Al-Najjar et al. (2022) demonstraram que algoritmos supervisionados aplicados a dados transacionais de cartão de crédito são capazes de identificar os preditores mais relevantes do abandono de clientes. Li e Yan (2025), por sua vez, utilizaram o XGBoost combinado com técnicas de interpretabilidade (SHAP values e R-learner) para prever churn bancário com 97% de acurácia, identificando frequência de transações e número de produtos financeiros como as variáveis mais influentes. Esses resultados dialogam diretamente com os achados da análise exploratória deste projeto, que apontou `Total_Trans_Ct` e `Months_Inactive_12_mon` como os principais diferenciadores entre clientes ativos e desistentes. Além disso, a capacidade nativa do XGBoost de lidar com desbalanceamento via `scale_pos_weight` e sua eficiência computacional o tornam particularmente adequado ao contexto deste projeto.
 
 ## Ajuste do hiperparâmetro `n_estimators`
 
@@ -142,6 +148,10 @@ O modelo XGBoost final, treinado com `n_estimators=500` e `scale_pos_weight` cal
 
 O F1-score de **0.9164** para a classe minoritária demonstra que o modelo é eficaz em identificar clientes propensos ao cancelamento, mantendo bom equilíbrio entre precisão e recall. A precisão de **0.9137** indica que, quando o modelo sinaliza um cancelamento, está correto em mais de 91% das vezes, minimizando o esforço em ações de retenção desnecessárias. O recall de **0.9192** é particularmente relevante: significa que o modelo identifica mais de 91% dos clientes que realmente irão cancelar, permitindo intervenções antecipadas.
 
+### Interpretação de negócio
+
+Os resultados obtidos têm implicações práticas diretas para instituições financeiras. O problema central identificado na Etapa 1 — a dificuldade em antecipar o cancelamento de clientes e os custos associados à perda de receita e à aquisição de novos usuários — é diretamente endereçado pelo modelo. Na prática, os **307 Verdadeiros Positivos** representam clientes que seriam corretamente sinalizados para ações de retenção, como ofertas personalizadas, contato proativo ou revisão de condições contratuais. Os **27 Falsos Negativos** representam clientes que cancelariam sem detecção prévia — um número expressivamente baixo, que indica que o modelo deixa passar menos de 9% dos casos de risco. Já os **29 Falsos Positivos** representam clientes ativos que receberiam esforços de retenção desnecessários, um custo operacional marginal diante do volume de cancelamentos corretamente identificados. Para gestores e analistas do setor financeiro — público-alvo definido na Etapa 1 — esse nível de desempenho viabiliza a implementação do modelo como ferramenta de apoio à decisão em estratégias de relacionamento e retenção de clientes.
+
 ### Matriz de Confusão
 
 ![Matriz de Confusão](img/Matriz-De-Confusao-XGBOOST.png)
@@ -156,14 +166,13 @@ O F1-score de **0.9164** para a classe minoritária demonstra que o modelo é ef
 - **Falso Negativo (FN) — 27**: clientes desistentes não identificados pelo modelo. Este é o erro mais custoso no contexto de churn, pois representa clientes que cancelaram sem que houvesse oportunidade de intervenção.
 - **Verdadeiro Positivo (TP) — 307**: clientes desistentes corretamente identificados, permitindo ações de retenção direcionadas.
 
-A baixa quantidade de Falsos Negativos (27) é o resultado mais relevante: o modelo deixa passar menos de 9% dos clientes que realmente cancelarão, o que representa uma capacidade sólida de detecção antecipada de churn.
-
 ---
 
 # Pipeline de pesquisa e análise de dados
 
-O pipeline seguiu um conjunto organizado e replicável de processos, desde a coleta dos dados até a avaliação final do modelo:
+O pipeline seguiu um conjunto organizado e replicável de processos, desde a especificação do problema até a avaliação final do modelo:
 
+0. **Especificação do problema**: identificar padrões comportamentais em clientes de cartão de crédito que indicam risco de cancelamento, com base na questão de pesquisa definida na Etapa 1 — *"De que forma técnicas de aprendizado de máquina podem ser utilizadas para identificar padrões e realizar a segmentação de clientes de cartão de crédito com base em características demográficas, financeiras e comportamentais?"* — tendo `Attrition_Flag` como variável-alvo e F1-score como métrica principal de avaliação.
 1. **Coleta dos dados**: dataset *BankChurners.csv* baixado do Kaggle via `kagglehub`, garantindo reprodutibilidade na coleta.
 2. **Análise exploratória (EDA)**: compreensão da estrutura, estatísticas descritivas numéricas e categóricas, visualização de distribuições e análise de outliers via IQR.
 3. **Remoção de colunas**: exclusão de `CLIENTNUM` (identificador sem valor preditivo) e das colunas Naive Bayes (causariam *data leakage*).
@@ -173,4 +182,4 @@ O pipeline seguiu um conjunto organizado e replicável de processos, desde a col
 7. **Tratamento do desbalanceamento**: uso de `scale_pos_weight` para penalizar erros na classe minoritária durante o treinamento.
 8. **Teste de hiperparâmetros**: avaliação sistemática de `n_estimators` em `[500, 750, 1000, 1250, 1500]` com F1-score como métrica guia.
 9. **Treinamento do modelo final**: XGBoost com `n_estimators=500`, escolhido pelo melhor equilíbrio entre desempenho e eficiência computacional.
-10. **Avaliação final**: análise detalhada via acurácia, F1-score, precisão, recall e Matriz de Confusão no conjunto de teste.
+10. **Avaliação final**: análise detalhada via acurácia, F1-score, precisão, recall e Matriz de Confusão no conjunto de teste, com interpretação dos resultados no contexto de negócio.
