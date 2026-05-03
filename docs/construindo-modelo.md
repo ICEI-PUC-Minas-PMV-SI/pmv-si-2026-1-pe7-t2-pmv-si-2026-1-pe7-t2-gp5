@@ -30,6 +30,8 @@ Avalie quais etapas são importantes para o contexto dos dados que você está t
 
 Nesta seção, o algoritmo de aprendizado de máquina selecionado para a construção do modelo de previsão de churn foi o **XGBoost (Extreme Gradient Boosting)**. Esta escolha foi justificada pela sua reconhecida alta performance em problemas de classificação tabular, eficiência no tratamento de conjuntos de dados desbalanceados (comum em cenários de churn), capacidade de regularização (L1 e L2 para prevenir overfitting) e fornecimento de importância de features para interpretabilidade. A seleção do XGBoost foi embasada por estudos de ponta na área, como os de Al-Najjar et al. (2022) e Li e Yan (2025), que demonstram a eficácia deste algoritmo na previsão de churn em contextos financeiros e bancários.
 
+![Gráfico de Desempenho XGBoost](img/Grafico-Desempenho-XGBOOST.png)
+
 Em relação ao ajuste dos parâmetros livres, focamos no hiperparâmetro `n_estimators`, que controla o número de árvores no modelo. Foram realizados testes sistemáticos com diferentes valores para `n_estimators`, começando com uma gama ampla e refinando para um intervalo mais específico: `[500, 750, 1000, 1250, 1500]`. A avaliação utilizou o F1-score da classe minoritária ('Attrited Customer') como métrica principal, por ser mais adequada para datasets desbalanceados. Os resultados indicaram que `n_estimators=500` e `n_estimators=750` atingiram o pico de desempenho (F1-score de 0.9164). Optou-se por `n_estimators=500` para o modelo final, buscando o melhor equilíbrio entre performance preditiva e eficiência computacional, evitando complexidade desnecessária sem comprometer a qualidade do modelo.
 
 # Avaliação dos modelos criados
@@ -56,6 +58,8 @@ Após o treinamento do modelo XGBoost final com `n_estimators=500` e o uso de `s
 Esses resultados indicam um desempenho robusto do modelo. A acurácia geral é alta, mas a análise detalhada das métricas para a classe 'Attrited Customer' é mais reveladora devido ao desbalanceamento. Um F1-score de 0.9164 para a classe minoritária demonstra que o modelo é eficaz em identificar clientes propensos ao cancelamento, mantendo um bom equilíbrio entre precisão e recall. A precisão de 0.9137 significa que, quando o modelo prevê um cancelamento, ele está correto em mais de 91% das vezes, o que minimiza o esforço em ações de retenção desnecessárias. O recall de 0.9192 é particularmente positivo, pois significa que o modelo consegue identificar a grande maioria dos clientes que realmente irão cancelar, permitindo que a instituição financeira direcione intervenções a tempo.
 
 A **Matriz de Confusão** reforça essa análise:
+
+![Matriz De Confusão](img/Matriz-De-Confusao-XGBOOST.png)
 
 * **Verdadeiro Negativo (TN):** 1762 - Clientes ativos corretamente identificados como ativos.
 * **Falso Positivo (FP):** 29 - Clientes ativos erroneamente classificados como desistentes.
