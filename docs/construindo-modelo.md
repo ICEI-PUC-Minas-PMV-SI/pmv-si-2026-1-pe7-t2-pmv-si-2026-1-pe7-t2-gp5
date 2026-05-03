@@ -81,41 +81,45 @@ A escolha dessas métricas é essencial para compreender o desempenho do modelo 
 
 ## Discussão dos resultados obtidos
 
-Após o treinamento do modelo XGBoost final com `n_estimators=500` e o uso de `scale_pos_weight` para lidar com o desbalanceamento de classes, as métricas de desempenho no conjunto de teste foram:
+O modelo XGBoost final, treinado com `n_estimators=500` e `scale_pos_weight` calculado a partir do conjunto de treino, obteve os seguintes resultados no conjunto de teste:
 
-* **Acurácia Geral:** 0.9736
-* **F1-score (Attrited Customer):** 0.9164
-* **Precisão (Attrited Customer):** 0.9137
-* **Recall (Attrited Customer):** 0.9192
+| Métrica | Valor |
+|---|---|
+| Acurácia Geral | 0.9736 |
+| F1-score (Attrited Customer) | 0.9164 |
+| Precisão (Attrited Customer) | 0.9137 |
+| Recall (Attrited Customer) | 0.9192 |
 
-Esses resultados indicam um desempenho robusto do modelo. A acurácia geral é alta, mas a análise detalhada das métricas para a classe 'Attrited Customer' é mais reveladora devido ao desbalanceamento. Um F1-score de 0.9164 para a classe minoritária demonstra que o modelo é eficaz em identificar clientes propensos ao cancelamento, mantendo um bom equilíbrio entre precisão e recall. A precisão de 0.9137 significa que, quando o modelo prevê um cancelamento, ele está correto em mais de 91% das vezes, o que minimiza o esforço em ações de retenção desnecessárias. O recall de 0.9192 é particularmente positivo, pois significa que o modelo consegue identificar a grande maioria dos clientes que realmente irão cancelar, permitindo que a instituição financeira direcione intervenções a tempo.
+O F1-score de **0.9164** para a classe minoritária demonstra que o modelo é eficaz em identificar clientes propensos ao cancelamento, mantendo bom equilíbrio entre precisão e recall. A precisão de **0.9137** indica que, quando o modelo sinaliza um cancelamento, está correto em mais de 91% das vezes, minimizando o esforço em ações de retenção desnecessárias. O recall de **0.9192** é particularmente relevante: significa que o modelo identifica mais de 91% dos clientes que realmente irão cancelar, permitindo intervenções antecipadas.
 
-A **Matriz de Confusão** reforça essa análise:
+### Matriz de Confusão
 
-![Matriz De Confusão](img/Matriz-De-Confusao-XGBOOST.png)
+![Matriz de Confusão](img/Matriz-De-Confusao-XGBOOST.png)
 
-* **Verdadeiro Negativo (TN):** 1762 - Clientes ativos corretamente identificados como ativos.
-* **Falso Positivo (FP):** 29 - Clientes ativos erroneamente classificados como desistentes.
-* **Falso Negativo (FN):** 27 - Clientes desistentes erroneamente classificados como ativos (erro mais custoso).
-* **Verdadeiro Positivo (TP):** 307 - Clientes desistentes corretamente identificados como desistentes.
+| | Previsto: Ativo | Previsto: Desistente |
+|---|---|---|
+| **Real: Ativo** | 1762 (TN) | 29 (FP) |
+| **Real: Desistente** | 27 (FN) | 307 (TP) |
 
-A baixa quantidade de Falsos Negativos (27) é crucial para o problema de churn, indicando que o modelo é eficaz em identificar a maioria dos clientes que realmente cancelarão.
+- **Verdadeiro Negativo (TN) — 1762**: clientes ativos corretamente identificados como ativos.
+- **Falso Positivo (FP) — 29**: clientes ativos sinalizados erroneamente como desistentes. Em termos de negócio, representam esforços de retenção aplicados a clientes que não cancelariam.
+- **Falso Negativo (FN) — 27**: clientes desistentes não identificados pelo modelo. Este é o erro mais custoso no contexto de churn, pois representa clientes que cancelaram sem que houvesse oportunidade de intervenção.
+- **Verdadeiro Positivo (TP) — 307**: clientes desistentes corretamente identificados, permitindo ações de retenção direcionadas.
+
+A baixa quantidade de Falsos Negativos (27) é o resultado mais relevante: o modelo deixa passar menos de 9% dos clientes que realmente cancelarão, o que representa uma capacidade sólida de detecção antecipada de churn.
+
 
 # Pipeline de pesquisa e análise de dados
 
-Nosso pipeline seguiu um conjunto organizado de processos:
+O pipeline seguiu um conjunto organizado e replicável de processos, desde a coleta dos dados até a avaliação final do modelo:
 
-1.  **Coleta dos Dados:** Dataset baixado do Kaggle via `kagglehub`.
-2.  **Análise Exploratória (EDA):** Compreensão da estrutura e estatísticas descritivas (numéricas e categóricas).
-3.  **Remoção de Colunas:** Exclusão de colunas que causariam vazamento de informação (data leakage).
-4.  **Limpeza dos Dados:** Tratamento de valores 'Unknown', remoção de nulos, exclusão da coluna 'CLIENTNUM' e verificação de duplicatas.
-5.  **Análise de Outliers:** Identificação via regra do IQR em variáveis financeiras e de comportamento.
-6.  **Preparação para Análise de Classes:** Criação da variável alvo `is_desistente` e separação entre ativos e desistentes.
-7.  **Visualizações Gráficas:** Exploração de churn por idade, educação, estado civil, renda, transações e inatividade.
-8.  **Preparação para o Modelo:** Codificação One-Hot (dummies) e divisão em treino/teste com estratificação.
-9.  **Implementação e Teste:** Testes sistemáticos com o hiperparâmetro `n_estimators`.
-10. **Avaliação Final:** Treinamento final e análise detalhada via métricas e Matriz de Confusão.
-
-## Observações importantes
-
-Todas as tarefas realizadas nesta etapa deverão ser registradas em formato de texto junto com suas explicações de forma a apresentar os códigos desenvolvidos e também, o código deverá ser incluído, na íntegra, na pasta "src".
+1. **Coleta dos dados**: dataset *BankChurners.csv* baixado do Kaggle via `kagglehub`, garantindo reprodutibilidade na coleta.
+2. **Análise exploratória (EDA)**: compreensão da estrutura, estatísticas descritivas numéricas e categóricas, visualização de distribuições e análise de outliers via IQR.
+3. **Remoção de colunas**: exclusão de `CLIENTNUM` (identificador sem valor preditivo) e das colunas Naive Bayes (causariam *data leakage*).
+4. **Limpeza dos dados**: remoção de registros com valores `"Unknown"`, verificação de nulos e duplicatas.
+5. **Análise de outliers**: identificação via regra do IQR nas variáveis financeiras e comportamentais, com decisão de manutenção justificada.
+6. **Preparação para modelagem**: criação da variável-alvo `is_desistente`, codificação One-Hot das variáveis categóricas e divisão estratificada em treino (70%) e teste (30%).
+7. **Tratamento do desbalanceamento**: uso de `scale_pos_weight` para penalizar erros na classe minoritária durante o treinamento.
+8. **Teste de hiperparâmetros**: avaliação sistemática de `n_estimators` em `[500, 750, 1000, 1250, 1500]` com F1-score como métrica guia.
+9. **Treinamento do modelo final**: XGBoost com `n_estimators=500`, escolhido pelo melhor equilíbrio entre desempenho e eficiência computacional.
+10. **Avaliação final**: análise detalhada via acurácia, F1-score, precisão, recall e Matriz de Confusão no conjunto de teste.
