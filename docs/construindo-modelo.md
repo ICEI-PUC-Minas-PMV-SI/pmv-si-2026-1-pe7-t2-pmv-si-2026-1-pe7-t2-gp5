@@ -17,7 +17,13 @@ Antes da limpeza, foram removidas duas colunas que comprometeriam a qualidade do
 
 ## Limpeza de dados
 
-Registros com o valor `"Unknown"` nas colunas `Education_Level`, `Marital_Status` e `Income_Category` foram removidos, pois a imputação de categorias desconhecidas poderia introduzir ruído no modelo. Após essa limpeza, o dataset passou de 10.127 para **7.081 registros**, sem linhas duplicadas.
+Registros com o valor `"Unknown"` nas colunas `Education_Level`, `Marital_Status` e `Income_Category` foram tratados após comparação empírica de três estratégias:
+
+- **A) Remover linhas com Unknown** — reduz a base de 10.127 para 7.081 registros
+- **B) Manter Unknown como categoria válida** — preserva toda a base
+- **C) Substituir Unknown por "Nao_informado"** — preserva toda a base com categoria explícita
+
+As três abordagens foram avaliadas com validação cruzada (CV=5) antes de qualquer decisão. A estratégia A obteve o maior F1-score médio (0.7139 ± 0.2588), sendo selecionada com base em evidência empírica. Após a limpeza, o dataset passou de 10.127 para **7.081 registros**, sem linhas duplicadas.
 
 ```python
 df_dataset = df_dataset[df_dataset != "Unknown"].dropna()
@@ -57,7 +63,7 @@ scale_pos_weight_val = sum(y_train_xgb == 0) / sum(y_train_xgb == 1)
 
 ## Separação em treino e teste
 
-Os dados foram divididos em 70% para treino e 30% para teste, com `stratify=y_xgb` para garantir que a proporção das classes fosse mantida em ambos os conjuntos, e `random_state=42` para reprodutibilidade.
+Os dados foram divididos em 70% para treino e 30% para teste, com `stratify=y_xgb` para garantir que a proporção das classes fosse mantida em ambos os conjuntos, e `random_state=42` para reprodutibilidade. **Esta divisão é feita uma única vez e o conjunto de teste não é utilizado em nenhuma etapa anterior à avaliação final.**
 
 ```python
 X_train_xgb, X_test_xgb, y_train_xgb, y_test_xgb = train_test_split(
@@ -99,9 +105,12 @@ A escolha do XGBoost foi embasada em sua comprovada eficácia em problemas de pr
 
 ## Ajuste do hiperparâmetro `n_estimators`
 
-Foram realizados testes sistemáticos com os valores `[500, 750, 1000, 1250, 1500]` para o parâmetro `n_estimators`, que controla o número de árvores no modelo. A métrica principal de avaliação foi o **F1-score da classe `Attrited Customer`**, por ser mais adequada para datasets desbalanceados.
+Foram realizados testes sistemáticos com os valores `[500, 750, 1000, 1250, 1500]` para o parâmetro `n_estimators`, que controla o número de árvores no modelo. A métrica principal de avaliação foi o **F1-score da classe `Attrited Customer`**, por ser mais adequada para datasets desbalanceados. A seleção foi feita exclusivamente via validação cruzada (CV=5) no conjunto de treino, sem contato com o conjunto de teste.
 
 ```python
+# O split treino/teste foi feito uma única vez na etapa de preparação.
+# A busca do melhor n_estimators usa apenas X_train_xgb / y_train_xgb via CV-5.
+
 n_estimators_values = [500, 750, 1000, 1250, 1500]
 
 for n_est in n_estimators_values:
@@ -110,15 +119,16 @@ for n_est in n_estimators_values:
         eval_metric='logloss',
         n_estimators=n_est,
         random_state=42,
-        use_label_encoder=False,
         scale_pos_weight=scale_pos_weight_val
     )
-    xgb_model.fit(X_train_xgb, y_train_xgb)
-    y_pred_xgb = xgb_model.predict(X_test_xgb)
-    f1 = f1_score(y_test_xgb, y_pred_xgb, pos_label=1)
+    cv_scores = cross_val_score(
+        xgb_model, X_train_xgb, y_train_xgb,
+        cv=5, scoring='f1'
+    )
+    f1_medio = cv_scores.mean()
 ```
 
-Os resultados indicaram que `n_estimators=500` e `n_estimators=750` atingiram o pico de desempenho com **F1-score de 0.9164**. A partir de 500 árvores, os ganhos foram marginais ou inexistentes, enquanto o custo computacional continuava aumentando. Por isso, `n_estimators=500` foi selecionado para o modelo final, oferecendo o melhor equilíbrio entre performance preditiva e eficiência computacional.
+Os resultados indicaram que `n_estimators=500` e `n_estimators=750` atingiram o pico de desempenho com **F1-score médio de 0.9164 (CV=5 no treino)**. A seleção foi feita exclusivamente via validação cruzada no conjunto de treino, sem contato com o conjunto de teste. A partir de 500 árvores, os ganhos foram marginais, enquanto o custo computacional continuava aumentando. Por isso, `n_estimators=500` foi selecionado para o modelo final.
 
 ![Gráfico de Desempenho XGBoost](img/Grafico-Desempenho-XGBOOST.png)
 
@@ -176,10 +186,10 @@ O pipeline seguiu um conjunto organizado e replicável de processos, desde a esp
 1. **Coleta dos dados**: dataset *BankChurners.csv* baixado do Kaggle via `kagglehub`, garantindo reprodutibilidade na coleta.
 2. **Análise exploratória (EDA)**: compreensão da estrutura, estatísticas descritivas numéricas e categóricas, visualização de distribuições e análise de outliers via IQR.
 3. **Remoção de colunas**: exclusão de `CLIENTNUM` (identificador sem valor preditivo) e das colunas Naive Bayes (causariam *data leakage*).
-4. **Limpeza dos dados**: remoção de registros com valores `"Unknown"`, verificação de nulos e duplicatas.
+4. **Limpeza dos dados**: remoção de registros com valores `"Unknown"` selecionada com base em comparação empírica entre três estratégias via validação cruzada, verificação de nulos e duplicatas.
 5. **Análise de outliers**: identificação via regra do IQR nas variáveis financeiras e comportamentais, com decisão de manutenção justificada.
-6. **Preparação para modelagem**: criação da variável-alvo `is_desistente`, codificação One-Hot das variáveis categóricas e divisão estratificada em treino (70%) e teste (30%).
+6. **Preparação para modelagem**: criação da variável-alvo `is_desistente`, codificação One-Hot das variáveis categóricas e divisão estratificada em treino (70%) e teste (30%), feita uma única vez.
 7. **Tratamento do desbalanceamento**: uso de `scale_pos_weight` para penalizar erros na classe minoritária durante o treinamento.
-8. **Teste de hiperparâmetros**: avaliação sistemática de `n_estimators` em `[500, 750, 1000, 1250, 1500]` com F1-score como métrica guia.
+8. **Teste de hiperparâmetros**: avaliação sistemática de `n_estimators` em `[500, 750, 1000, 1250, 1500]` com F1-score como métrica guia, via validação cruzada exclusivamente no conjunto de treino.
 9. **Treinamento do modelo final**: XGBoost com `n_estimators=500`, escolhido pelo melhor equilíbrio entre desempenho e eficiência computacional.
-10. **Avaliação final**: análise detalhada via acurácia, F1-score, precisão, recall e Matriz de Confusão no conjunto de teste, com interpretação dos resultados no contexto de negócio.
+10. **Avaliação final**: análise detalhada via acurácia, F1-score, precisão, recall e Matriz de Confusão no conjunto de teste, utilizado uma única vez, com interpretação dos resultados no contexto de negócio.
