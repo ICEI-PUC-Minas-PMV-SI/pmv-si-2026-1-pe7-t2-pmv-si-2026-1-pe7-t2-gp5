@@ -1,11 +1,31 @@
-# Instruções de utilização
+# Cartão Churn
 
-## Instalação do Site
+Código-fonte do projeto de previsão de churn: backend (Flask + XGBoost) e frontend (React + Vite). O dataset está em `src/backend/`.
 
-O site em HTML/CSS/JS é um projeto estático, logo pode ser utilizado tanto em servidores...
+---
 
-## Histórico de versões
+**Pré-requisitos**: Python 3.10+, Node.js 18+.
 
-### [0.1.0] - DD/MM/AAAA
-#### Adicionado
-- Adicionado ...
+Instalação (backend):
+
+  cd src/backend
+  python -m venv .venv
+  .venv\Scripts\activate   (Windows)
+  pip install -r requirements.txt
+  python application.py
+
+Observação: o treinamento do modelo é feito em background se o CSV estiver presente.
+
+Exemplo (curl):
+
+  curl -X POST http://localhost:5000/api/predict'
+---
+
+Instalação (frontend):
+
+  cd src/frontend
+  npm install
+  npm run dev
+
+O frontend assume a API em `http://localhost:5000`.
+---

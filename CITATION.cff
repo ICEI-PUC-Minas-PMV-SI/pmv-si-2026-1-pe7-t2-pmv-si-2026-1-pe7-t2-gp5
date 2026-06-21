@@ -1,29 +1,30 @@
 cff-version: 1.0.1
-message: Please cite this software using these metadata.
-title:
+message: Por favor cite este software usando os metadados abaixo.
+title: Análise de Perfis de Clientes de Cartão de Crédito utilizando Técnicas de Inteligência Artificial
 authors:
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - name-suffix: Professor XXXX
+  - family-names: Vasconcelos
+    given-names: Andre Murilo Neves
+  - family-names: Assis
+    given-names: Carlos Eduardo de Lima
+  - family-names: de Matos
+    given-names: Déborah Thaís
+  - family-names: Firmino
+    given-names: Júnio dos Reis
+  - family-names: Sousa
+    given-names: Maria Eduarda
+  - family-names: Vieira
+    given-names: Warley Junio Martins
+  - name-suffix: Professor
     affiliation: PUC Minas
-    family-names:
-    given-names:
+    family-names: Tizzo
+    given-names: Neil Paiva
 keywords:
-  -
-  -
+  - churn
+  - cartão de crédito
+  - XGBoost
+  - machine learning
+  - análise de dados
 repository-code:
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2023-06-30
+date-released: 2026-06-21

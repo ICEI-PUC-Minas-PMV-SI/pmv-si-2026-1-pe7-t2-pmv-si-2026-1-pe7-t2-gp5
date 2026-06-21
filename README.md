@@ -69,8 +69,9 @@ Notebook completo com todas as análises e treinamento do modelo:
 
 ## Instruções de utilização
 
-Acesso em Produção (quando disponível)
-* URL: https://<seu-dominio>/...
+Acesso em Produção
+* URL Site: https://black-water-0f84cb510.7.azurestaticapps.net/
+* URL API: https://cartao-churn-api-dmcvhjc0byfjgghg.brazilsouth-01.azurewebsites.net/api/status
 * Status: online/homologação
 
 
