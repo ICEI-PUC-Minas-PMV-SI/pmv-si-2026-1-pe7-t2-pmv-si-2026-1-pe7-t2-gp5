@@ -53,7 +53,7 @@ O projeto utiliza o dataset **BankChurners.csv**, disponibilizado publicamente n
 | Métrica | Valor |
 | ------- | ----- |
 | Acurácia Geral | 97,36% |
-| F1-score (Attrited Customer) | 0,9164 |
+| F1-score (Attrited Customer) | 91,64% |
 | Precisão (Attrited Customer) | 91,37% |
 | Recall (Attrited Customer) | 91,92% |
 
@@ -68,11 +68,10 @@ Notebook completo com todas as análises e treinamento do modelo:
 ---
 
 ## Instruções de utilização
-
 Acesso em Produção
-* URL Site: https://black-water-0f84cb510.7.azurestaticapps.net/
-* URL API: https://cartao-churn-api-dmcvhjc0byfjgghg.brazilsouth-01.azurewebsites.net/api/status
-* Status: online/homologação
+* Status: online
+* [Site](https://black-water-0f84cb510.7.azurestaticapps.net/)
+* [API](https://cartao-churn-api-dmcvhjc0byfjgghg.brazilsouth-01.azurewebsites.net/api/status)
 
 
 # Código

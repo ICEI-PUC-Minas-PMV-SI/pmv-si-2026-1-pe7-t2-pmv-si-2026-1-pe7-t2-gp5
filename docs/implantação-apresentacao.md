@@ -64,6 +64,4 @@ A estratégia adotada para gerenciar a saúde do app foi estruturada da seguinte
 * **Estratégia de Controle e Prevenção:** Como estamos operando dentro do teto do plano estudantil, a automação de escala (auto-scaling) foi mantida desativada por escolha de design. Com isso, evitamos que o ambiente criasse novas instâncias pagas automaticamente em picos de acesso. 
 
 # Apresentação da solução
-O vídeo de apresentação está disponível no YouTube: [Video Apresentação](https://youtu.be/SEU_LINK_AQUI).
-
-O arquivo do vídeo também está incluído na pasta: `docs/video/video_apresentacao.mp4`.
+O vídeo de apresentação está disponível no Link: [Video Apresentação](https://drive.google.com/file/d/1fNITHzowEchIthecmPaW2VGUq6HqnHj4/view?usp=drive_link).
